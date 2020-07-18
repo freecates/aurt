@@ -1,0 +1,48 @@
+
+      id={1}
+      name="Genética"
+      items={[
+        { id: '01', name: 'Origen', path: '/origen' },
+        { id: '02', name: 'Artur', path: '/artur' },
+        { id: '03', name: 'Gastronomia', path: '/gastronomia' },
+        { id: '04', name: 'Aürt', path: '/aurt' },
+        { id: '05', name: 'Equipo', path: '/equipo' },
+        { id: '06', name: 'Palabras', path: '/palabras' },
+        { id: '07', name: 'Blog', path: '/artur' }
+      ]}
+    />
+    <MenuItemModal
+      id={2}
+      name="Menú"
+      items={[
+        { id: '01', name: 'Origen', path: '/origen' },
+        { id: '02', name: 'Artur', path: '/artur' },
+        { id: '03', name: 'Gastronomia', path: '/artur' },
+        { id: '04', name: 'Aürt', path: '/artur' },
+        { id: '05', name: 'Equipo', path: '/artur' },
+        { id: '06', name: 'Palabras', path: '/artur' },
+        { id: '07', name: 'Blog', path: '/artur' }
+      ]}
+    />
+    <MenuItemModal
+      id={3}
+      name="Bodega"
+      items={[
+        { id: '01', name: 'Origen', path: '/origen' },
+        { id: '02', name: 'Artur', path: '/artur' },
+        { id: '03', name: 'Gastronomia', path: '/artur' },
+        { id: '04', name: 'Aürt', path: '/artur' },
+        { id: '05', name: 'Equipo', path: '/artur' },
+        { id: '06', name: 'Palabras', path: '/artur' },
+        { id: '07', name: 'Blog', path: '/artur' }
+      ]}
+    />
+
+
+                  {items.map((item, id) => (
+                    <MenuTitle key={id}>
+                      <Link href={item.path} prefetch>
+                        <h2 title={item.name}>{item.name}</h2>
+                      </Link>
+                    </MenuTitle>
+                  ))}
