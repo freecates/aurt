@@ -76,20 +76,17 @@ const Page = props => (
   </InnerLayout>
 )
 
-Page.getInitialProps = async function(props) {
-  const { pathname } = props
-  // console.log(pathname)
-  const res = await fetch(`https://aurtdata.now.sh/data${pathname}.json`)
-  const post = await res.json()
-  const noOKDescription = post.firstTextBlock
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/en/beginnings.json`);
+  const post = await res.json();
+  const noOKDescription = post.firstTextBlock;
   const description = noOKDescription
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
-    .replace(/<br\/>/g, '')
-
-  // console.log(`Fetched page: ${post.title}`)
-
-  return { post, description }
+    .replace(/<br\/>/g, '');
+  return {
+    props: { post, description }, // will be passed to the page component as props
+  };
 }
 
 export default Page

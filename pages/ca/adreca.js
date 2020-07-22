@@ -1,32 +1,31 @@
-import fetch from 'isomorphic-unfetch'
-import InnerLayout from '../../components/InnerLayout'
-import Title from '../../components/styles/Title'
-import SubTitle from '../../components/styles/SubTitle'
-import TextBlock from '../../components/styles/TextBlock'
-import TextSeparator from '../../components/styles/TextSeparator'
-import ItemStyles from '../../components/styles/ItemStyles'
-import Head from 'next/head'
-import Link from 'next/link'
+import fetch from 'isomorphic-unfetch';
+import InnerLayout from '../../components/InnerLayout';
+import Title from '../../components/styles/Title';
+import SubTitle from '../../components/styles/SubTitle';
+import TextBlock from '../../components/styles/TextBlock';
+import TextSeparator from '../../components/styles/TextSeparator';
+import ItemStyles from '../../components/styles/ItemStyles';
+import Head from 'next/head';
 
-const Page = props => (
+const Page = (props) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title}</title>
       <meta
-        name="description"
+        name='description'
         content={'Passeig del Taulat 262-264, 08019 Barcelona'}
       />
     </Head>
     <ItemStyles>
       <Title>{props.post.title}</Title>
       <TextSeparator>
-        <div className="here" />
+        <div className='here' />
       </TextSeparator>
       {props.notLastdireccionBlocks.map((notLastdireccionBlock, id) => (
         <div key={id}>
           <SubTitle
             dangerouslySetInnerHTML={{
-              __html: notLastdireccionBlock.title
+              __html: notLastdireccionBlock.title,
             }}
           />
           {notLastdireccionBlock.logo && (
@@ -41,12 +40,12 @@ const Page = props => (
             <div
               className={notLastdireccionBlock.class}
               dangerouslySetInnerHTML={{
-                __html: notLastdireccionBlock.bioText
+                __html: notLastdireccionBlock.bioText,
               }}
             />
           </TextBlock>
           <TextSeparator>
-            <div className="here" />
+            <div className='here' />
           </TextSeparator>
         </div>
       ))}
@@ -54,64 +53,57 @@ const Page = props => (
         <div key={id}>
           <SubTitle
             dangerouslySetInnerHTML={{
-              __html: lastdireccionBlock.title
+              __html: lastdireccionBlock.title,
             }}
           />
           <TextBlock>
-            <Link
+            <a
               href={
                 'https://www.google.com/maps/dir/?api=1&destination=' +
                 lastdireccionBlock.lat +
                 ',' +
                 lastdireccionBlock.lng
-              }
-            >
-              <a>
-                <div
-                  className={lastdireccionBlock.class}
-                  dangerouslySetInnerHTML={{
-                    __html: lastdireccionBlock.bioText
-                  }}
-                />
-              </a>
-            </Link>
+              }>
+              <div
+                className={lastdireccionBlock.class}
+                dangerouslySetInnerHTML={{
+                  __html: lastdireccionBlock.bioText,
+                }}
+              />
+            </a>
           </TextBlock>
           {lastdireccionBlock.logo && (
             <SubTitle>
-              <Link
+              <a
                 href={
                   'https://www.google.com/maps/dir/?api=1&destination=' +
                   lastdireccionBlock.lat +
                   ',' +
                   lastdireccionBlock.lng
-                }
-              >
-                <a>
-                  <img
-                    src={lastdireccionBlock.logo}
-                    style={{ width: '960', height: '960px' }}
-                  />
-                </a>
-              </Link>
+                }>
+                <img
+                  src={lastdireccionBlock.logo}
+                  style={{ width: '960', height: '960px' }}
+                />
+              </a>
             </SubTitle>
           )}
         </div>
       ))}
     </ItemStyles>
   </InnerLayout>
-)
+);
 
-Page.getInitialProps = async function(props) {
-  const { pathname } = props
-  // console.log(pathname)
-  const res = await fetch(`https://aurtdata.now.sh/data${pathname}.json`)
-  const post = await res.json()
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/ca/adreca.json`);
+  const post = await res.json();
 
-  const notLastdireccionBlocks = post.direccionBlocks.slice(0, -1)
+  const notLastdireccionBlocks = post.direccionBlocks.slice(0, -1);
 
-  const lastdireccionBlocks = post.direccionBlocks.slice(-1)
-
-  return { post, notLastdireccionBlocks, lastdireccionBlocks }
+  const lastdireccionBlocks = post.direccionBlocks.slice(-1);
+  return {
+    props: { post, notLastdireccionBlocks, lastdireccionBlocks },
+  };
 }
 
-export default Page
+export default Page;

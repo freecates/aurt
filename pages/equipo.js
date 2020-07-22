@@ -1,63 +1,62 @@
-import InnerLayout from '../components/InnerLayout'
-import fetch from 'isomorphic-unfetch'
-import Title from '../components/styles/Title'
-import SubTitle from '../components/styles/SubTitle'
-import TextBlock from '../components/styles/TextBlock'
-import TextSeparator from '../components/styles/TextSeparator'
-import ItemStyles from '../components/styles/ItemStyles'
-import Head from 'next/head'
-import Link from 'next/link'
+import InnerLayout from '../components/InnerLayout';
+import fetch from 'isomorphic-unfetch';
+import Title from '../components/styles/Title';
+import SubTitle from '../components/styles/SubTitle';
+import TextBlock from '../components/styles/TextBlock';
+import TextSeparator from '../components/styles/TextSeparator';
+import ItemStyles from '../components/styles/ItemStyles';
+import Head from 'next/head';
 
-const Page = props => (
+const Page = (props) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title}</title>
-      <meta name="description" content={props.description} />
+      <meta name='description' content={props.description} />
       <link
-        rel="canonical"
+        rel='canonical'
         href={`https://www.aurtrestaurant.com${props.pathname}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'ca'}
         href={`https://www.aurtrestaurant.com/ca/equip`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'en'}
         href={`https://www.aurtrestaurant.com/en/team`}
       />
       <meta
-        property="og:url"
+        property='og:url'
         content={`https://www.aurtrestaurant.com${props.pathname}`}
       />
-      <meta property="og:type" content="article" />
+      <meta property='og:type' content='article' />
       <meta
-        property="og:title"
+        property='og:title'
         content={`AÜRT Restaurant | ${props.post.title}`}
       />
-      <meta property="og:description" content={props.description} />
+      <meta property='og:description' content={props.description} />
       <meta
-        property="og:image"
+        property='og:image'
         content={
           'https://www.aurtrestaurant.com/static/icons/og-image-aurt-web.png'
         }
       />
-      <meta property="og:image:width" content="1024" />
-      <meta property="og:image:height" content="1024" />
+      <meta property='og:image:width' content='1024' />
+      <meta property='og:image:height' content='1024' />
     </Head>
     <ItemStyles>
       <Title>{props.post.title}</Title>
       <TextSeparator>
-        <div className="here" />
+        <div className='here' />
       </TextSeparator>
       <TextBlock
         dangerouslySetInnerHTML={{
-          __html: props.post.introText
+          __html: props.post.introText,
         }}
       />
       <TextSeparator>
-        <div className="medium here" />
+        <div className='medium here' />
       </TextSeparator>
       {props.notLastmemberBlocks.map((notLastmemberBlock, id) => (
         <div key={id}>
@@ -69,30 +68,30 @@ const Page = props => (
           </SubTitle>
           <SubTitle>{notLastmemberBlock.name}</SubTitle>
           <TextBlock>
-            <div className="center">
+            <div className='center'>
               <strong
                 dangerouslySetInnerHTML={{
-                  __html: notLastmemberBlock.title
+                  __html: notLastmemberBlock.title,
                 }}
               />
             </div>
           </TextBlock>
           <TextBlock>
-            <div className="center">
+            <div className='center'>
               <span
-                className="uppercase"
+                className='uppercase'
                 dangerouslySetInnerHTML={{
-                  __html: notLastmemberBlock.memberText
+                  __html: notLastmemberBlock.memberText,
                 }}
               />
             </div>
           </TextBlock>
           {notLastmemberBlock.secondMemberText && (
             <TextBlock>
-              <div className="center">
+              <div className='center'>
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: notLastmemberBlock.secondMemberText
+                    __html: notLastmemberBlock.secondMemberText,
                   }}
                 />
               </div>
@@ -100,45 +99,37 @@ const Page = props => (
           )}
           {notLastmemberBlock.instagram && (
             <TextBlock>
-              <div className="center">
-                <Link
+              <div className='center'>
+                <a
                   href={
                     'https://www.instagram.com/' + notLastmemberBlock.instagram
                   }
-                >
-                  <a
-                    target="_blank"
-                    title={'Instragram' + notLastmemberBlock.instagram}
-                  >
-                    <img
-                      alt="logo instagram "
-                      src="/static/Instagram_black.svg"
-                      style={{
-                        width: '28px',
-                        height: '28px',
-                        marginRight: '.25em',
-                        verticalAlign: 'text-bottom'
-                      }}
-                    />
-                  </a>
-                </Link>
-                <Link
+                  target='_blank'
+                  title={'Instragram' + notLastmemberBlock.instagram}>
+                  <img
+                    alt='logo instagram '
+                    src='/static/Instagram_black.svg'
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      marginRight: '.25em',
+                      verticalAlign: 'text-bottom',
+                    }}
+                  />
+                </a>
+                <a
                   href={
                     'https://www.instagram.com/' + notLastmemberBlock.instagram
                   }
-                >
-                  <a
-                    target="_blank"
-                    title={'Instragram' + notLastmemberBlock.instagram}
-                  >
-                    <span>@{notLastmemberBlock.instagram}</span>
-                  </a>
-                </Link>
+                  target='_blank'
+                  title={'Instragram' + notLastmemberBlock.instagram}>
+                  <span>@{notLastmemberBlock.instagram}</span>
+                </a>
               </div>
             </TextBlock>
           )}
           <TextSeparator>
-            <div className="medium here" />
+            <div className='medium here' />
           </TextSeparator>
         </div>
       ))}
@@ -152,30 +143,30 @@ const Page = props => (
           </SubTitle>
           <SubTitle>{lastmemberBlock.name}</SubTitle>
           <TextBlock>
-            <div className="center">
+            <div className='center'>
               <strong
                 dangerouslySetInnerHTML={{
-                  __html: lastmemberBlock.title
+                  __html: lastmemberBlock.title,
                 }}
               />
             </div>
           </TextBlock>
           <TextBlock>
-            <div className="center">
+            <div className='center'>
               <span
-                className="uppercase"
+                className='uppercase'
                 dangerouslySetInnerHTML={{
-                  __html: lastmemberBlock.memberText
+                  __html: lastmemberBlock.memberText,
                 }}
               />
             </div>
           </TextBlock>
           {lastmemberBlock.secondMemberText && (
             <TextBlock>
-              <div className="center">
+              <div className='center'>
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: lastmemberBlock.secondMemberText
+                    __html: lastmemberBlock.secondMemberText,
                   }}
                 />
               </div>
@@ -183,40 +174,32 @@ const Page = props => (
           )}
           {lastmemberBlock.instagram && (
             <TextBlock>
-              <div className="center">
-                <Link
+              <div className='center'>
+                <a
                   href={
                     'https://www.instagram.com/' + lastmemberBlock.instagram
                   }
-                >
-                  <a
-                    target="_blank"
-                    title={'Instragram' + lastmemberBlock.instagram}
-                  >
-                    <img
-                      alt="logo instagram "
-                      src="/static/Instagram_black.svg"
-                      style={{
-                        width: '28px',
-                        height: '28px',
-                        marginRight: '.25em',
-                        verticalAlign: 'text-bottom'
-                      }}
-                    />
-                  </a>
-                </Link>
-                <Link
+                  target='_blank'
+                  title={'Instragram' + lastmemberBlock.instagram}>
+                  <img
+                    alt='logo instagram '
+                    src='/static/Instagram_black.svg'
+                    style={{
+                      width: '28px',
+                      height: '28px',
+                      marginRight: '.25em',
+                      verticalAlign: 'text-bottom',
+                    }}
+                  />
+                </a>
+                <a
                   href={
                     'https://www.instagram.com/' + lastmemberBlock.instagram
                   }
-                >
-                  <a
-                    target="_blank"
-                    title={'Instragram' + lastmemberBlock.instagram}
-                  >
-                    <span>@{lastmemberBlock.instagram}</span>
-                  </a>
-                </Link>
+                  target='_blank'
+                  title={'Instragram' + lastmemberBlock.instagram}>
+                  <span>@{lastmemberBlock.instagram}</span>
+                </a>
               </div>
             </TextBlock>
           )}
@@ -224,11 +207,11 @@ const Page = props => (
       ))}
     </ItemStyles>
   </InnerLayout>
-)
+);
 
-Page.getInitialProps = async function() {
-  const res = await fetch(`https://aurtdata.now.sh/data/equipo.json`)
-  const post = await res.json()
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/equipo.json`);
+  const post = await res.json();
 
   const description = [
     ...new Set(
@@ -238,14 +221,16 @@ Page.getInitialProps = async function() {
           .replace(/<\/strong>/g, '')
           .replace(/<br\/>/g, ',')
       )
-    )
-  ]
+    ),
+  ];
 
-  const notLastmemberBlocks = post.memberBlocks.slice(0, -1)
+  const notLastmemberBlocks = post.memberBlocks.slice(0, -1);
 
-  const lastmemberBlocks = post.memberBlocks.slice(-1)
+  const lastmemberBlocks = post.memberBlocks.slice(-1);
 
-  return { post, notLastmemberBlocks, lastmemberBlocks, description }
+  return {
+    props: { post, notLastmemberBlocks, lastmemberBlocks, description }, // will be passed to the page component as props
+  };
 }
 
-export default Page
+export default Page;

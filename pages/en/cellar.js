@@ -114,7 +114,7 @@ const Page = (props) => (
       <SubTitle>
         {' '}
         VEURE
-        <Link href='/en/wines' prefetch>
+        <Link href='/en/wines'>
           <a>CARTA DE VINS</a>
         </Link>
       </SubTitle>
@@ -122,10 +122,8 @@ const Page = (props) => (
   </InnerLayout>
 );
 
-Page.getInitialProps = async function (props) {
-  const { pathname } = props;
-  // console.log(pathname)
-  const res = await fetch(`https://aurtdata.now.sh/data${pathname}.json`);
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/en/cellar.json`);
   const post = await res.json();
 
   const description = [
@@ -142,8 +140,9 @@ Page.getInitialProps = async function (props) {
   const notLastbodegaBlocks = post.bodegaBlocks.slice(0, -1);
 
   const lastbodegaBlocks = post.bodegaBlocks.slice(-1);
-
-  return { post, notLastbodegaBlocks, lastbodegaBlocks, description };
-};
+  return {
+    props: { post, notLastbodegaBlocks, lastbodegaBlocks, description },
+  };
+}
 
 export default Page;

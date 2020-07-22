@@ -146,7 +146,7 @@ class MenuItemModalMobile extends React.Component {
                                   </MenuTitle>
                                   {menuModalItem.items.map((item, id) => (
                                     <MenuTitle key={id} close={close}>
-                                      <Link href={item.path} prefetch>
+                                      <Link href={item.path} >
                                         <h2 onClick={close} title={item.name}>
                                           {item.name}
                                         </h2>
@@ -160,7 +160,7 @@ class MenuItemModalMobile extends React.Component {
                         ) : (
                           <React.Fragment>
                             <h4 close={close}>
-                              <Link href={menuModalItem.path} prefetch>
+                              <Link href={menuModalItem.path} >
                                 <a
                                   className="item"
                                   onClick={close}
@@ -216,7 +216,7 @@ class MenuItemModalMobile extends React.Component {
                                   </MenuTitle>
                                   {menuModalItem.items.map((item, id) => (
                                     <MenuTitle key={id} close={close}>
-                                      <Link href={item.path} prefetch>
+                                      <Link href={item.path} >
                                         <h2 onClick={close} title={item.name}>
                                           {item.name}
                                         </h2>
@@ -230,7 +230,7 @@ class MenuItemModalMobile extends React.Component {
                         ) : (
                           <React.Fragment>
                             <h4 close={close}>
-                              <Link href={menuModalItem.path} prefetch>
+                              <Link href={menuModalItem.path} >
                                 <a
                                   className="item"
                                   onClick={close}

@@ -56,11 +56,12 @@ const Page = props => (
   </InnerLayout>
 )
 
-Page.getInitialProps = async function() {
+export async function getStaticProps() {
   const res = await fetch(`https://aurtdata.now.sh/data/ca/mailchimp.html`)
   const content = await res.text()
-
-  return { content }
+  return {
+    props: { content },
+  };
 }
 
 export default Page

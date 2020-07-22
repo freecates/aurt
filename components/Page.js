@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
 import Meta from './Meta'
@@ -29,7 +29,7 @@ const Inner = styled.div`
   padding: 2rem 0 8rem;
 `
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'neutraface_2_text_bold';
     src: url('/static/Neutra2Text_bold.woff2') format('woff2'),     url('/static/Neutra2Text_bold.woff') format('woff');
@@ -236,6 +236,7 @@ export default function Page(props) {
         <Footer ruta={props.ruta} />
         <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
       </StyledPage>
+      <GlobalStyle/>
     </ThemeProvider>
   )
 }

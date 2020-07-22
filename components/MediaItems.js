@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Query } from 'react-apollo';
@@ -129,8 +128,7 @@ export default class LaGaleria extends React.Component {
               <SingleItemStyles>
                 <TextBlock>
                   <div className='center'>
-                    <Link href={'https://www.instagram.com/aurtrestaurant'}>
-                      <a
+                      <a href={'https://www.instagram.com/aurtrestaurant'}
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
@@ -145,15 +143,12 @@ export default class LaGaleria extends React.Component {
                           }}
                         />
                       </a>
-                    </Link>
-                    <Link href={'https://www.instagram.com/aurtrestaurant'}>
-                      <a
+                      <a href={'https://www.instagram.com/aurtrestaurant'}
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
                         <span>@aurtrestaurant</span>
                       </a>
-                    </Link>
                   </div>
                 </TextBlock>
                 <div className='details'>

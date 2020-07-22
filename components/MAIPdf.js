@@ -43,7 +43,7 @@ const MAIPdf = props => (
       <h2 className="text-center">
         {props.ruta.indexOf('/ca') == -1 &&
           (props.ruta.indexOf('/en') == -1 && (
-            <Link href={'/mai'} prefetch>
+            <Link href={'/mai'} >
               <a title={"Volver a MA'I"}>{'<<'}</a>
             </Link>
           ))}
@@ -51,7 +51,7 @@ const MAIPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/ca/') && (
-          <Link href={'/ca/mai'} prefetch>
+          <Link href={'/ca/mai'} >
             <a title={"Tornar a MA'I"}>{'<<'}</a>
           </Link>
         )}
@@ -59,7 +59,7 @@ const MAIPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/en') && (
-          <Link href={'/en/mai'} prefetch>
+          <Link href={'/en/mai'} >
             <a title={"Back to MA'I"}>{'<<'}</a>
           </Link>
         )}

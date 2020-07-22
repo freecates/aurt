@@ -88,7 +88,7 @@ const Page = props => (
   </InnerLayout>
 )
 
-Page.getInitialProps = async function() {
+export async function getStaticProps() {
   const res = await fetch(`https://aurtdata.now.sh/data/origen.json`)
   const post = await res.json()
   const noOKDescription = post.firstTextBlock
@@ -96,10 +96,9 @@ Page.getInitialProps = async function() {
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
     .replace(/<br\/>/g, '')
-
-  // console.log(`Fetched page: ${post.title}`)
-
-  return { post, description }
+  return {
+    props: {post, description}, // will be passed to the page component as props
+  }
 }
 
 export default Page

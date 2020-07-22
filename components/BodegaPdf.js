@@ -48,7 +48,7 @@ const BodegaPdf = (props) => {
         )}
         <h2 className='text-center'>
           {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
-            <Link href={'/bodega'} prefetch>
+            <Link href={'/bodega'} >
               <a title={'Volver a Bodega'}>{'<<'}</a>
             </Link>
           )}
@@ -56,7 +56,7 @@ const BodegaPdf = (props) => {
 
         <h2 className='text-center'>
           {props.ruta.includes('/ca') && (
-            <Link href={'/ca/celler'} prefetch>
+            <Link href={'/ca/celler'} >
               <a title={'Tornar a Celler'}>{'<<'}</a>
             </Link>
           )}
@@ -64,7 +64,7 @@ const BodegaPdf = (props) => {
 
         <h2 className='text-center'>
           {props.ruta.includes('/en') && (
-            <Link href={'/en/cellar'} prefetch>
+            <Link href={'/en/cellar'} >
               <a title={'Back to Cellar'}>{'<<'}</a>
             </Link>
           )}

@@ -49,7 +49,7 @@ const MenuPdf = props => (
       <h2 className="text-center">
         {props.ruta.indexOf('/ca') == -1 &&
           (props.ruta.indexOf('/en') == -1 && (
-            <Link href={'/menu'} prefetch>
+            <Link href={'/menu'} >
               <a title={'Volver a Menu'}>{'<<'}</a>
             </Link>
           ))}
@@ -57,7 +57,7 @@ const MenuPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/ca') && (
-          <Link href={'/ca/menu'} prefetch>
+          <Link href={'/ca/menu'} >
             <a title={'Tornar a Menu'}>{'<<'}</a>
           </Link>
         )}
@@ -65,7 +65,7 @@ const MenuPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/en') && (
-          <Link href={'/en/menu'} prefetch>
+          <Link href={'/en/menu'} >
             <a title={'Back to Menu'}>{'<<'}</a>
           </Link>
         )}

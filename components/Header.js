@@ -92,27 +92,7 @@ const StyleHeader = styled.header`
         }
       }
     }
-    @media (min-width: 1024px) {
-      .lang-menu {
-        display: block;
-        grid-column: 5;
-        grid-row: 1;
-        justify-self: start;
-      }
-    }
-    @media (min-width: 1024px) {
-      .starred {
-        z-index: 3000;
-        display: block;
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: start;
-        padding-left: 2rem;
-        padding-top: 2rem;
-        backface-visibility: hidden;
-        align-self: stretch;
-      }
-    }
+
     @media (max-width: 960px) {
       position: fixed;
       z-index: 3000;
@@ -144,6 +124,28 @@ const StyleHeader = styled.header`
         grid-column: 3;
       }
     }
+
+    @media (min-width: 1024px) {
+      .lang-menu {
+        display: block;
+        grid-column: 5;
+        grid-row: 1;
+        justify-self: start;
+      }
+    }
+    @media (min-width: 1024px) {
+      .starred {
+        z-index: 3000;
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: start;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        backface-visibility: hidden;
+        align-self: stretch;
+      }
+    }
     @media (min-width: 768px) {
       .lang-menu {
         display: block;
@@ -158,7 +160,8 @@ const StyleHeader = styled.header`
   }
 `
 
-const Header = props => (
+const Header = props => {
+  return (
   <StyleHeader>
     <div className="bar">
       <Nav
@@ -168,14 +171,14 @@ const Header = props => (
       />
       <Logo>
         {props.ruta.includes('/en') && (
-          <Link href="/en" prefetch>
+          <Link href="/en" >
             <a>
               <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
             </a>
           </Link>
         )}
         {props.ruta.includes('/ca') && (
-          <Link href="/ca" prefetch>
+          <Link href="/ca" >
             <a>
               <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
             </a>
@@ -183,7 +186,7 @@ const Header = props => (
         )}
         {props.ruta.indexOf('/ca') == -1 &&
           (props.ruta.indexOf('/en') == -1 && (
-            <Link href="/" prefetch>
+            <Link href="/" >
               <a>
                 <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
               </a>
@@ -192,6 +195,6 @@ const Header = props => (
       </Logo>
     </div>
   </StyleHeader>
-)
+)}
 
 export default Header

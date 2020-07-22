@@ -83,7 +83,7 @@ const Page = props => (
       <SubTitle>
         {' '}
         VER
-        <Link href="/menu-degustacion" prefetch>
+        <Link href="/menu-degustacion" >
           <a>MENU DEGUSTACIÓN</a>
         </Link>
       </SubTitle>
@@ -102,7 +102,7 @@ const Page = props => (
   </InnerLayout>
 )
 
-Page.getInitialProps = async function() {
+export async function getStaticProps() {
   const res = await fetch(`https://aurtdata.now.sh/data/menu.json`)
   const post = await res.json()
   const noOKDescription = post.firstTextBlock
@@ -110,10 +110,9 @@ Page.getInitialProps = async function() {
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
     .replace(/<br\/>/g, '')
-
-  // console.log(`Fetched page: ${post.title}`)
-
-  return { post, description }
+  return {
+    props: { post, description },
+  };
 }
 
 export default Page

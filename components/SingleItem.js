@@ -205,18 +205,18 @@ export default class SingleItem extends React.Component {
                   />
                   <h2 className="center">
                     {ruta.includes('/ca') && (
-                      <Link href={'/ca/items'} prefetch>
+                      <Link href={'/ca/items'} >
                         <a title={'Tornar a Blog'}>{'<<'}</a>
                       </Link>
                     )}
                     {ruta.includes('/en') && (
-                      <Link href={'/en/items'} prefetch>
+                      <Link href={'/en/items'} >
                         <a title={'Back to Blog'}>{'<<'}</a>
                       </Link>
                     )}
                     {ruta.indexOf('/ca') == -1 &&
                       (ruta.indexOf('/en') == -1 && (
-                        <Link href={'/items'} prefetch>
+                        <Link href={'/items'} >
                           <a title={'Volver a Blog'}>{'<<'}</a>
                         </Link>
                       ))}
