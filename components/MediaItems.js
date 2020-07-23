@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import styled from 'styled-components';
 import Error from './ErrorMessage';
 import InnerLayout from './InnerLayout';

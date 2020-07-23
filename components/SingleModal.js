@@ -154,8 +154,8 @@ class SingleModal extends React.Component {
                       id={singleModalItem.id}
                     >
                       {singleModalItem.items.map((item, id) => (
-                        <React.Fragment>
-                          <AlignLeftMenutitle key={`${item.name}-${id}`}>
+                        <React.Fragment key={`${item.name}-${id}`}>
+                          <AlignLeftMenutitle>
                             <h2 className="black" title={item.name}>
                               {item.name}
                             </h2>

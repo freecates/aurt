@@ -6,9 +6,10 @@ import TextBlock from '../components/styles/TextBlock';
 import TextSeparator from '../components/styles/TextSeparator';
 import ItemStyles from '../components/styles/ItemStyles';
 import Head from 'next/head';
-import Link from 'next/link';
 
-const Page = (props) => (
+const Artur = props => {
+  console.log(props.post.title);
+return (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title} Martínez</title>
@@ -40,7 +41,7 @@ const Page = (props) => (
       <meta property='og:type' content='article' />
       <meta
         property='og:title'
-        content={`AÜRT Restaurant | ${props.post.title} Martínez`}
+        content={"AÜRT Restaurant | " + props.post.title + "Martínez"}
       />
       <meta property='og:description' content={props.bioTexts} />
       <meta
@@ -105,7 +106,7 @@ const Page = (props) => (
       ))}
     </ItemStyles>
   </InnerLayout>
-);
+)};
 
 export async function getStaticProps() {
   const res = await fetch(`https://aurtdata.now.sh/data/artur.json`);
@@ -127,4 +128,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Page;
+export default Artur;

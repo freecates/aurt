@@ -89,7 +89,7 @@ class MenuItemModal extends React.Component {
     const noOKmenuModalItems = this.props.menuModalItems;
     const menuModalItems = [...noOKmenuModalItems];
     return (
-      <React.Fragment>
+      <>
         <div className={'left'}>
           <NavStyles>
             {menuModalItems
@@ -218,7 +218,7 @@ class MenuItemModal extends React.Component {
               ))}
           </NavStyles>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

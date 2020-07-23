@@ -7,7 +7,7 @@ import TextSeparator from '../../components/styles/TextSeparator';
 import ItemStyles from '../../components/styles/ItemStyles';
 import Head from 'next/head';
 
-const Page = (props) => (
+const Gastronomy = (props) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title}</title>
@@ -65,4 +65,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Page;
+export default Gastronomy;

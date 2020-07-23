@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider, FormattedDate } from 'react-intl'
 import gql from 'graphql-tag'
-import { Query } from 'react-apollo'
+import { Query } from '@apollo/client/react/components'
 import Error from './ErrorMessage'
 import styled from 'styled-components'
 import InnerLayout from './InnerLayout'
@@ -11,7 +11,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 const propTypes = {
-  ruta: PropTypes.object.isRequired
+  ruta: PropTypes.string.isRequired
 }
 
 const SingleItemStyles = styled.div`

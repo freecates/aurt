@@ -103,15 +103,15 @@ const Page = props => (
 )
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/en/menu.json`);
-  const post = await res.json();
-  const noOKDescription = post.firstTextBlock;
+  const res = await fetch(`https://aurtdata.now.sh/data/en/menu.json`)
+  const post = await res.json()
+  const noOKDescription = post.firstTextBlock
   const description = noOKDescription
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
-    .replace(/<br\/>/g, '');
+    .replace(/<br\/>/g, '')
   return {
-    props: { post, notLasthorariosBlocks, lasthorariosBlocks, description },
+    props: { post, description },
   };
 }
 
