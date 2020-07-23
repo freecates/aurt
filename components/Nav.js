@@ -3,6 +3,7 @@ import MenuLang from './MenuLang'
 import MenuReservation from './MenuReservation'
 import MediaQuery from 'react-responsive'
 import MenuItemModalMobile from './MenuItemModalMobile'
+import Awards from './Awards';
 
 const Nav = props => (
   <React.Fragment>
@@ -14,6 +15,7 @@ const Nav = props => (
     </MediaQuery>
     <MenuLang langMenu={props.langMenu} ruta={props.ruta} />
     <MenuReservation menuModalItems={props.content} ruta={props.ruta} />
+    <Awards ruta={props.ruta} />
   </React.Fragment>
 )
 
