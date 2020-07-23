@@ -4,7 +4,7 @@ const ReservaIframe = props => (
   <React.Fragment>
     {props.ruta.includes('/ca') && (
       <Iframe
-        url="https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/catalan"
+        url={props.url}
         width="100%"
         height="100vh"
         id="aurt-reservar"
@@ -16,7 +16,7 @@ const ReservaIframe = props => (
     )}
     {props.ruta.includes('/en') && (
       <Iframe
-        url="https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/english"
+        url={props.url}
         width="100%"
         height="100vh"
         id="aurt-reservar"
@@ -29,7 +29,7 @@ const ReservaIframe = props => (
     {props.ruta.indexOf('/ca') == -1 &&
       (props.ruta.indexOf('/en') == -1 && (
         <Iframe
-          url="https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/spanish"
+          url={props.url}
           width="100%"
           height="100vh"
           id="aurt-reservar"

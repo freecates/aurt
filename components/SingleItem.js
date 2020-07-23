@@ -45,7 +45,7 @@ const SingleItemStyles = styled.div`
   }
 `
 
-const SINGLE_POST_QUERY = gql`
+export const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {
     post(id: $id) {
       id
@@ -89,8 +89,6 @@ export default class SingleItem extends React.Component {
               .replace(/<p>/g, '')
               .replace(/<\/p>/g, '')
             const itemDate = post.date.replace(/-/g, '/')
-            console.log(itemDate)
-            console.log(new Date(post.date))
             return (
               <SingleItemStyles>
                 <Head>

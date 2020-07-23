@@ -48,7 +48,7 @@ const Reservations = props => (
     )}
 
     <React.Fragment>
-      <ReservaIframe ruta={props.ruta} />
+      <ReservaIframe ruta={props.ruta} url={props.url} />
     </React.Fragment>
 
     {props.ruta.includes('/ca') && (

@@ -27,7 +27,7 @@ const MenuPdf = props => (
         <div className="here" />
       </TextSeparator>
       {props.ruta.includes('/ca') && (
-        <MyPdfViewer file="https://wp.aurtrestaurant.com/wp-content/uploads/menus-aurt/menu-aurt-ca.pdf" />
+        <MyPdfViewer file={props.file} />
         /* <Iframe
           url="https://wp.aurtrestaurant.com/207-2/"
           width="100%"
@@ -40,11 +40,11 @@ const MenuPdf = props => (
         /> */
       )}
       {props.ruta.includes('/en') && (
-        <MyPdfViewer file="https://wp.aurtrestaurant.com/wp-content/uploads/menus-aurt/menu-aurt-en.pdf" />
+        <MyPdfViewer file={props.file} />
       )}
       {props.ruta.indexOf('/ca') == -1 &&
         (props.ruta.indexOf('/en') == -1 && (
-          <MyPdfViewer file="https://wp.aurtrestaurant.com/wp-content/uploads/menus-aurt/menu-aurt-es.pdf" />
+          <MyPdfViewer file={props.file} />
         ))}
       <h2 className="text-center">
         {props.ruta.indexOf('/ca') == -1 &&

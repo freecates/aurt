@@ -8,7 +8,6 @@ import ItemStyles from '../components/styles/ItemStyles';
 import Head from 'next/head';
 
 const Artur = props => {
-  console.log(props.post.title);
 return (
   <InnerLayout mainlayout>
     <Head>

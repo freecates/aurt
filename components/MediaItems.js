@@ -75,7 +75,7 @@ const SingleItemStyles = styled.div`
   }
 `;
 
-const MEDIA_ITEMS_QUERY = gql`
+export const MEDIA_ITEMS_QUERY = gql`
   query MEDIA_ITEMS_QUERY {
     mediaItems(first: 60) {
       edges {

@@ -3,7 +3,6 @@ import { useApollo } from '../lib/apolloClient';
 import Page from '../components/Page';
 
 const App = ({ Component, pageProps }) => {
-  console.log(pageProps);
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (

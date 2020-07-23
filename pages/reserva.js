@@ -18,8 +18,16 @@ const Reserva = props => (
         )}`}
       />
     </Head>
-    <Reservations ruta={props.pathname} name={'Saber más'} />
+    <Reservations ruta={props.pathname} name={'Saber más'} url={props.url} />
   </div>
 )
+
+export async function getStaticProps() {
+  const url = 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/spanish';
+
+  return {
+    props: { url }, // will be passed to the page component as props
+  };
+}
 
 export default Reserva
