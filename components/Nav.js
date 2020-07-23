@@ -10,7 +10,7 @@ const Nav = props => (
       <MenuItemModalMobile menuModalItems={props.content} />
     </MediaQuery>
     <MediaQuery minDeviceWidth={1024}>
-      <MenuItemModal menuModalItems={props.content} />
+      <MenuItemModal menuModalItems={props.content}/>
     </MediaQuery>
     <MenuLang langMenu={props.langMenu} ruta={props.ruta} />
     <MenuReservation menuModalItems={props.content} ruta={props.ruta} />

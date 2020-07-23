@@ -28,22 +28,20 @@ const MAIPdf = props => (
       </TextSeparator>
       {props.ruta.includes('/ca') && (
         <MyPdfViewer
-          file={
-            'https://wp.aurtrestaurant.com/wp-content/uploads/menus-mai/menu-mai-ca.pdf'
-          }
+          file={props.file}
         />
       )}
       {props.ruta.includes('/en') && (
-        <MyPdfViewer file="https://wp.aurtrestaurant.com/wp-content/uploads/menus-mai/menu-mai-en.pdf" />
+        <MyPdfViewer file={props.file} />
       )}
       {props.ruta.indexOf('/ca') == -1 &&
         (props.ruta.indexOf('/en') == -1 && (
-          <MyPdfViewer file="https://wp.aurtrestaurant.com/wp-content/uploads/menus-mai/menu-mai-es.pdf" />
+          <MyPdfViewer file={props.file} />
         ))}
       <h2 className="text-center">
         {props.ruta.indexOf('/ca') == -1 &&
           (props.ruta.indexOf('/en') == -1 && (
-            <Link href={'/mai'} prefetch>
+            <Link href={'/mai'} >
               <a title={"Volver a MA'I"}>{'<<'}</a>
             </Link>
           ))}
@@ -51,7 +49,7 @@ const MAIPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/ca/') && (
-          <Link href={'/ca/mai'} prefetch>
+          <Link href={'/ca/mai'} >
             <a title={"Tornar a MA'I"}>{'<<'}</a>
           </Link>
         )}
@@ -59,7 +57,7 @@ const MAIPdf = props => (
 
       <h2 className="text-center">
         {props.ruta.includes('/en') && (
-          <Link href={'/en/mai'} prefetch>
+          <Link href={'/en/mai'} >
             <a title={"Back to MA'I"}>{'<<'}</a>
           </Link>
         )}

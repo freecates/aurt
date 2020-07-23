@@ -1,39 +1,27 @@
-import App, { Container } from 'next/app'
-import { ApolloProvider } from 'react-apollo'
-import withApolloClient from '../lib/withApolloClient'
-import dynamic from 'next/dynamic'
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../lib/apolloClient';
+import Page from '../components/Page';
 
-const DynamicComponentWithCustomLoading = dynamic(
-  () => import('../components/Page'),
-  {
-    loading: () => <p style={{ textAlign: 'center' }}>...</p>
+const App = ({ Component, pageProps }) => {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Page ruta={pageProps.pathname}>
+        <Component {...pageProps} />
+      </Page>
+    </ApolloProvider>
+  );
+};
+
+App.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
   }
-)
-
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-    // this exposes the query to the user
-    pageProps.pathname = ctx.pathname
-    pageProps.query = ctx.query
-    return { pageProps }
-  }
-
-  render() {
-    const { Component, apolloClient, pageProps } = this.props
-    return (
-      <Container>
-        <ApolloProvider client={apolloClient}>
-          <DynamicComponentWithCustomLoading ruta={pageProps.pathname}>
-            <Component {...pageProps} />
-          </DynamicComponentWithCustomLoading>
-        </ApolloProvider>
-      </Container>
-    )
-  }
-}
-
-export default withApolloClient(MyApp)
+  // this exposes the query to the user
+  pageProps.pathname = ctx.pathname;
+  pageProps.query = ctx.query;
+  return { pageProps };
+};
+export default App;

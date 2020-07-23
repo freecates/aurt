@@ -28,7 +28,7 @@ const BodegaPdf = (props) => {
           <div className='here' />
         </TextSeparator>
         {props.ruta.includes('/ca') && (
-          <MyPdfViewer file='https://wp.aurtrestaurant.com/wp-content/uploads/bodega-aurt/bodega-aurt-ca.pdf' />
+          <MyPdfViewer file={props.file} />
           /* <Iframe
           url="https://wp.aurtrestaurant.com/207-2/"
           width="100%"
@@ -41,14 +41,14 @@ const BodegaPdf = (props) => {
         /> */
         )}
         {props.ruta.includes('/en') && (
-          <MyPdfViewer file='https://wp.aurtrestaurant.com/wp-content/uploads/bodega-aurt/bodega-aurt-en.pdf' />
+          <MyPdfViewer file={props.file} />
         )}
         {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
-          <MyPdfViewer file='https://wp.aurtrestaurant.com/wp-content/uploads/bodega-aurt/bodega-aurt-es.pdf' />
+          <MyPdfViewer file={props.file} />
         )}
         <h2 className='text-center'>
           {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
-            <Link href={'/bodega'} prefetch>
+            <Link href={'/bodega'} >
               <a title={'Volver a Bodega'}>{'<<'}</a>
             </Link>
           )}
@@ -56,7 +56,7 @@ const BodegaPdf = (props) => {
 
         <h2 className='text-center'>
           {props.ruta.includes('/ca') && (
-            <Link href={'/ca/celler'} prefetch>
+            <Link href={'/ca/celler'} >
               <a title={'Tornar a Celler'}>{'<<'}</a>
             </Link>
           )}
@@ -64,7 +64,7 @@ const BodegaPdf = (props) => {
 
         <h2 className='text-center'>
           {props.ruta.includes('/en') && (
-            <Link href={'/en/cellar'} prefetch>
+            <Link href={'/en/cellar'} >
               <a title={'Back to Cellar'}>{'<<'}</a>
             </Link>
           )}

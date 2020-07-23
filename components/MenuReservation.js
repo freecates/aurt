@@ -28,7 +28,7 @@ class MenuReservation extends React.Component {
               .map(menuModalItem => (
                 <RodalStyles key={menuModalItem.id}>
                   <React.Fragment>
-                    <Link href={menuModalItem.path} prefetch>
+                    <Link href={menuModalItem.path} >
                       <a title={menuModalItem.name} id={menuModalItem.id}>
                         {ruta.includes('/en') ? (
                           <img

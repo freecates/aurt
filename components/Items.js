@@ -1,5 +1,5 @@
 import React from 'react'
-import { Query } from 'react-apollo'
+import { Query } from '@apollo/client/react/components'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import styled from 'styled-components'
@@ -11,12 +11,12 @@ import TextSeparator from './styles/TextSeparator'
 import Head from 'next/head'
 
 const propTypes = {
-  ruta: PropTypes.object.isRequired
+  ruta: PropTypes.string.isRequired
 }
 
 const defaultProps = {}
 
-const ALL_POSTS_QUERY = gql`
+export const ALL_POSTS_QUERY = gql`
   query ALL_POSTS_QUERY {
     posts {
       edges {

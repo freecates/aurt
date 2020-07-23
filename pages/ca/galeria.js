@@ -1,19 +1,20 @@
-import Head from 'next/head'
-import InnerLayout from '../../components/InnerLayout'
-import MediaItems from '../../components/MediaItems'
-import TextSeparator from '../../components/styles/TextSeparator'
-import Title from '../../components/styles/Title'
+import Head from 'next/head';
+import InnerLayout from '../../components/InnerLayout';
+import MediaItems, { MEDIA_ITEMS_QUERY } from '../../components/MediaItems';
+import TextSeparator from '../../components/styles/TextSeparator';
+import Title from '../../components/styles/Title';
+import { initializeApollo } from '../../lib/apolloClient';
 
-const Galeria = props => (
+const Galeria = (props) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AURT | Galeria</title>
       <link
-        rel="canonical"
+        rel='canonical'
         href={`https://www.aurtrestaurant.com${props.pathname}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'es'}
         href={`https://www.aurtrestaurant.com${props.pathname.replace(
           /\/ca\//g,
@@ -23,10 +24,25 @@ const Galeria = props => (
     </Head>
     <Title>Galeria</Title>
     <TextSeparator>
-      <div className="here" />
+      <div className='here' />
     </TextSeparator>
     <MediaItems ruta={props.pathname} />
   </InnerLayout>
-)
+);
 
-export default Galeria
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: MEDIA_ITEMS_QUERY,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+    unstable_revalidate: 1,
+  };
+}
+
+export default Galeria;

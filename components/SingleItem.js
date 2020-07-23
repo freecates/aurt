@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider, FormattedDate } from 'react-intl'
 import gql from 'graphql-tag'
-import { Query } from 'react-apollo'
+import { Query } from '@apollo/client/react/components'
 import Error from './ErrorMessage'
 import styled from 'styled-components'
 import InnerLayout from './InnerLayout'
@@ -11,7 +11,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 const propTypes = {
-  ruta: PropTypes.object.isRequired
+  ruta: PropTypes.string.isRequired
 }
 
 const SingleItemStyles = styled.div`
@@ -45,7 +45,7 @@ const SingleItemStyles = styled.div`
   }
 `
 
-const SINGLE_POST_QUERY = gql`
+export const SINGLE_POST_QUERY = gql`
   query SINGLE_POST_QUERY($id: ID!) {
     post(id: $id) {
       id
@@ -89,8 +89,6 @@ export default class SingleItem extends React.Component {
               .replace(/<p>/g, '')
               .replace(/<\/p>/g, '')
             const itemDate = post.date.replace(/-/g, '/')
-            console.log(itemDate)
-            console.log(new Date(post.date))
             return (
               <SingleItemStyles>
                 <Head>
@@ -205,18 +203,18 @@ export default class SingleItem extends React.Component {
                   />
                   <h2 className="center">
                     {ruta.includes('/ca') && (
-                      <Link href={'/ca/items'} prefetch>
+                      <Link href={'/ca/items'} >
                         <a title={'Tornar a Blog'}>{'<<'}</a>
                       </Link>
                     )}
                     {ruta.includes('/en') && (
-                      <Link href={'/en/items'} prefetch>
+                      <Link href={'/en/items'} >
                         <a title={'Back to Blog'}>{'<<'}</a>
                       </Link>
                     )}
                     {ruta.indexOf('/ca') == -1 &&
                       (ruta.indexOf('/en') == -1 && (
-                        <Link href={'/items'} prefetch>
+                        <Link href={'/items'} >
                           <a title={'Volver a Blog'}>{'<<'}</a>
                         </Link>
                       ))}

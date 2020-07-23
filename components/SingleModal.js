@@ -126,8 +126,8 @@ class SingleModal extends React.Component {
       <React.Fragment>
         {singleModalItems
           .filter(singleModalItem => singleModalItem.class == 'left')
-          .map(singleModalItem => (
-            <RodalStyles key={singleModalItem.id}>
+          .map((singleModalItem, index) => (
+            <RodalStyles key={index}>
               {singleModalItem.items ? (
                 <React.Fragment>
                   <strong>
@@ -154,8 +154,8 @@ class SingleModal extends React.Component {
                       id={singleModalItem.id}
                     >
                       {singleModalItem.items.map((item, id) => (
-                        <React.Fragment>
-                          <AlignLeftMenutitle key={id}>
+                        <React.Fragment key={`${item.name}-${id}`}>
+                          <AlignLeftMenutitle>
                             <h2 className="black" title={item.name}>
                               {item.name}
                             </h2>

@@ -1,24 +1,24 @@
-import fetch from 'isomorphic-unfetch'
-import InnerLayout from '../../components/InnerLayout'
-import Title from '../../components/styles/Title'
-import SubTitle from '../../components/styles/SubTitle'
-import TextBlock from '../../components/styles/TextBlock'
-import TextSeparator from '../../components/styles/TextSeparator'
-import ItemStyles from '../../components/styles/ItemStyles'
-import Head from 'next/head'
-import Link from 'next/link'
+import fetch from 'isomorphic-unfetch';
+import InnerLayout from '../../components/InnerLayout';
+import Title from '../../components/styles/Title';
+import SubTitle from '../../components/styles/SubTitle';
+import TextBlock from '../../components/styles/TextBlock';
+import TextSeparator from '../../components/styles/TextSeparator';
+import ItemStyles from '../../components/styles/ItemStyles';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const Page = props => (
+const Page = (props) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title}</title>
-      <meta name="description" content={props.description} />
+      <meta name='description' content={props.description} />
       <link
-        rel="canonical"
+        rel='canonical'
         href={`https://www.aurtrestaurant.com${props.pathname}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'en'}
         href={`https://www.aurtrestaurant.com${props.pathname.replace(
           /\/ca\//g,
@@ -26,7 +26,7 @@ const Page = props => (
         )}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'es'}
         href={`https://www.aurtrestaurant.com${props.pathname.replace(
           /\/ca\//g,
@@ -34,30 +34,30 @@ const Page = props => (
         )}`}
       />
       <meta
-        property="og:url"
+        property='og:url'
         content={`https://www.aurtrestaurant.com${props.pathname}`}
       />
-      <meta property="og:type" content="article" />
+      <meta property='og:type' content='article' />
       <meta
-        property="og:title"
+        property='og:title'
         content={`AÜRT Restaurant | ${props.post.title}`}
       />
-      <meta property="og:description" content={props.description} />
+      <meta property='og:description' content={props.description} />
       <meta
-        property="og:image"
+        property='og:image'
         content={
           'https://www.aurtrestaurant.com/static/icons/og-image-aurt-web.png'
         }
       />
-      <meta property="og:image:width" content="1024" />
-      <meta property="og:image:height" content="1024" />
+      <meta property='og:image:width' content='1024' />
+      <meta property='og:image:height' content='1024' />
     </Head>
     <ItemStyles>
       <Title>
         <img src={props.post.logo} style={{ width: '268px', height: '85px' }} />
       </Title>
       <TextSeparator>
-        <div className="here" />
+        <div className='here' />
       </TextSeparator>
       {props.notLastmaiBlocks.map((notLastmaiBlock, id) => (
         <div key={id}>
@@ -76,7 +76,7 @@ const Page = props => (
             <div
               className={notLastmaiBlock.class}
               dangerouslySetInnerHTML={{
-                __html: notLastmaiBlock.bioText
+                __html: notLastmaiBlock.bioText,
               }}
             />
           </TextBlock>
@@ -84,12 +84,12 @@ const Page = props => (
             <div
               className={notLastmaiBlock.class}
               dangerouslySetInnerHTML={{
-                __html: notLastmaiBlock.schedule
+                __html: notLastmaiBlock.schedule,
               }}
             />
           </TextBlock>
           <TextSeparator>
-            <div className="here" />
+            <div className='here' />
           </TextSeparator>
         </div>
       ))}
@@ -99,43 +99,42 @@ const Page = props => (
           <TextBlock>
             <div
               dangerouslySetInnerHTML={{
-                __html: lastmaiBlock.bioText
+                __html: lastmaiBlock.bioText,
               }}
             />
           </TextBlock>
         </div>
       ))}
       <TextSeparator>
-        <div className="here" />
+        <div className='here' />
       </TextSeparator>
       <SubTitle>
         {' '}
         VEURE
-        <Link href="/ca/menu-mai" prefetch>
+        <Link href='/ca/menu-mai'>
           <a>CARTA MA'I</a>
         </Link>
       </SubTitle>
       <TextSeparator />
     </ItemStyles>
   </InnerLayout>
-)
+);
 
-Page.getInitialProps = async function(props) {
-  const { pathname } = props
-  // console.log(pathname)
-  const res = await fetch(`https://aurtdata.now.sh/data${pathname}.json`)
-  const post = await res.json()
-  const noOKDescription = post.maiBlocks[0].bioText
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/ca/mai.json`);
+  const post = await res.json();
+  const noOKDescription = post.maiBlocks[0].bioText;
   const description = noOKDescription
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
-    .replace(/<br\/>/g, '')
+    .replace(/<br\/>/g, '');
 
-  const notLastmaiBlocks = post.maiBlocks.slice(0, -1)
+  const notLastmaiBlocks = post.maiBlocks.slice(0, -1);
 
-  const lastmaiBlocks = post.maiBlocks.slice(-1)
-
-  return { post, notLastmaiBlocks, lastmaiBlocks }
+  const lastmaiBlocks = post.maiBlocks.slice(-1);
+  return {
+    props: { post, notLastmaiBlocks, lastmaiBlocks, description },
+  };
 }
 
-export default Page
+export default Page;

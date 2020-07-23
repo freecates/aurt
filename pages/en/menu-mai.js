@@ -45,8 +45,16 @@ const CartaMai = props => (
       <meta property="og:image:width" content="1024" />
       <meta property="og:image:height" content="1024" />
     </Head>
-    <MAIPdf ruta={props.pathname} />
+    <MAIPdf ruta={props.pathname} file={props.file} />
   </div>
 )
+
+export async function getStaticProps() {
+  const file = 'https://wp.aurtrestaurant.com/wp-content/uploads/menus-mai/menu-mai-en.pdf';
+
+  return {
+    props: { file }, // will be passed to the page component as props
+  };
+}
 
 export default CartaMai

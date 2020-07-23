@@ -1,11 +1,10 @@
-import Link from 'next/link'
 import FooterStyles from './styles/FooterStyles'
 import SingleModal from './SingleModal'
 
 const FooterFourth = props => (
   <FooterStyles ruta={props.ruta} className="fourth">
     <div>
-      <p>
+      <section>
         <img
           src="/static/newsletter.svg"
           className="sn"
@@ -91,7 +90,7 @@ const FooterFourth = props => (
               INFORMADO
             </React.Fragment>
           ))}
-      </p>
+      </section>
     </div>
   </FooterStyles>
 )

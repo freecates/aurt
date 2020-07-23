@@ -1,8 +1,7 @@
 import gql from 'graphql-tag';
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import styled from 'styled-components';
 import Error from './ErrorMessage';
 import InnerLayout from './InnerLayout';
@@ -76,7 +75,7 @@ const SingleItemStyles = styled.div`
   }
 `;
 
-const MEDIA_ITEMS_QUERY = gql`
+export const MEDIA_ITEMS_QUERY = gql`
   query MEDIA_ITEMS_QUERY {
     mediaItems(first: 60) {
       edges {
@@ -129,8 +128,7 @@ export default class LaGaleria extends React.Component {
               <SingleItemStyles>
                 <TextBlock>
                   <div className='center'>
-                    <Link href={'https://www.instagram.com/aurtrestaurant'}>
-                      <a
+                      <a href={'https://www.instagram.com/aurtrestaurant'}
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
@@ -145,15 +143,12 @@ export default class LaGaleria extends React.Component {
                           }}
                         />
                       </a>
-                    </Link>
-                    <Link href={'https://www.instagram.com/aurtrestaurant'}>
-                      <a
+                      <a href={'https://www.instagram.com/aurtrestaurant'}
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
                         <span>@aurtrestaurant</span>
                       </a>
-                    </Link>
                   </div>
                 </TextBlock>
                 <div className='details'>

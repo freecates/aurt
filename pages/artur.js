@@ -1,24 +1,24 @@
-import fetch from 'isomorphic-unfetch'
-import InnerLayout from '../components/InnerLayout'
-import Title from '../components/styles/Title'
-import SubTitle from '../components/styles/SubTitle'
-import TextBlock from '../components/styles/TextBlock'
-import TextSeparator from '../components/styles/TextSeparator'
-import ItemStyles from '../components/styles/ItemStyles'
-import Head from 'next/head'
-import Link from 'next/link'
+import fetch from 'isomorphic-unfetch';
+import InnerLayout from '../components/InnerLayout';
+import Title from '../components/styles/Title';
+import SubTitle from '../components/styles/SubTitle';
+import TextBlock from '../components/styles/TextBlock';
+import TextSeparator from '../components/styles/TextSeparator';
+import ItemStyles from '../components/styles/ItemStyles';
+import Head from 'next/head';
 
-const Page = props => (
+const Artur = props => {
+return (
   <InnerLayout mainlayout>
     <Head>
       <title>AÜRT Restaurant | {props.post.title} Martínez</title>
-      <meta name="description" content={props.bioTexts} />
+      <meta name='description' content={props.bioTexts} />
       <link
-        rel="canonical"
+        rel='canonical'
         href={`https://www.aurtrestaurant.com${props.pathname}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'ca'}
         href={`https://www.aurtrestaurant.com${props.pathname.replace(
           /\//g,
@@ -26,7 +26,7 @@ const Page = props => (
         )}`}
       />
       <link
-        rel="alternate"
+        rel='alternate'
         hrefLang={'en'}
         href={`https://www.aurtrestaurant.com${props.pathname.replace(
           /\//g,
@@ -34,29 +34,29 @@ const Page = props => (
         )}`}
       />
       <meta
-        property="og:url"
+        property='og:url'
         content={`https://www.aurtrestaurant.com${props.pathname}`}
       />
-      <meta property="og:type" content="article" />
+      <meta property='og:type' content='article' />
       <meta
-        property="og:title"
-        content={`AÜRT Restaurant | ${props.post.title} Martínez`}
+        property='og:title'
+        content={"AÜRT Restaurant | " + props.post.title + "Martínez"}
       />
-      <meta property="og:description" content={props.bioTexts} />
+      <meta property='og:description' content={props.bioTexts} />
       <meta
-        property="og:image"
+        property='og:image'
         content={
           'https://www.aurtrestaurant.com/static/icons/og-image-aurt-web.png'
         }
       />
-      <meta property="og:image:width" content="1024" />
-      <meta property="og:image:height" content="1024" />
+      <meta property='og:image:width' content='1024' />
+      <meta property='og:image:height' content='1024' />
     </Head>
     <ItemStyles>
       <SubTitle>
         <img
-          className="with-margin"
-          alt="artur martínez"
+          className='with-margin'
+          alt='artur martínez'
           src={props.post.picture}
           style={{ width: '173px', height: '173px', borderRadius: '50%' }}
         />
@@ -64,56 +64,52 @@ const Page = props => (
       <Title>{props.post.title}</Title>
       <SubTitle>{props.post.subTitle}</SubTitle>
       <TextBlock>
-        <div className="center">
-          <Link href={'https://www.instagram.com/' + props.post.instagram}>
-            <a
-              target="_blank"
-              rel="noopener"
-              title={'Instragram' + props.post.instagram}
-            >
-              <img
-                alt="logo instagram "
-                src="/static/Instagram_black.svg"
-                style={{
-                  width: '28px',
-                  height: '28px',
-                  marginRight: '.25em',
-                  verticalAlign: 'text-bottom'
-                }}
-              />
-            </a>
-          </Link>
-          <Link href={'https://www.instagram.com/' + props.post.instagram}>
-            <a
-              target="_blank"
-              rel="noopener"
-              title={'Instragram' + props.post.instagram}
-            >
-              <span>@{props.post.instagram}</span>
-            </a>
-          </Link>
+        <div className='center'>
+          <a
+            href={'https://www.instagram.com/' + props.post.instagram}
+            target='_blank'
+            rel='noopener'
+            title={'Instragram' + props.post.instagram}>
+            <img
+              alt='logo instagram '
+              src='/static/Instagram_black.svg'
+              style={{
+                width: '28px',
+                height: '28px',
+                marginRight: '.25em',
+                verticalAlign: 'text-bottom',
+              }}
+            />
+          </a>
+          <a
+            href={'https://www.instagram.com/' + props.post.instagram}
+            target='_blank'
+            rel='noopener'
+            title={'Instragram' + props.post.instagram}>
+            <span>@{props.post.instagram}</span>
+          </a>
         </div>
       </TextBlock>
       <TextSeparator>
-        <div className="here" />
+        <div className='here' />
       </TextSeparator>
       {props.post.bioBlocks.map((bioBlock, id) => (
         <TextBlock key={id}>
           <div
-            className="center"
+            className='center'
             dangerouslySetInnerHTML={{
-              __html: bioBlock.bioText
+              __html: bioBlock.bioText,
             }}
           />
         </TextBlock>
       ))}
     </ItemStyles>
   </InnerLayout>
-)
+)};
 
-Page.getInitialProps = async function() {
-  const res = await fetch(`https://aurtdata.now.sh/data/artur.json`)
-  const post = await res.json()
+export async function getStaticProps() {
+  const res = await fetch(`https://aurtdata.now.sh/data/artur.json`);
+  const post = await res.json();
 
   const bioTexts = [
     ...new Set(
@@ -123,11 +119,12 @@ Page.getInitialProps = async function() {
           .replace(/<\/strong>/g, '')
           .replace(/<br\/>/g, ',')
       )
-    )
-  ]
-  // console.log(`Fetched page: ${post.title}`)
+    ),
+  ];
 
-  return { post, bioTexts }
+  return {
+    props: { post, bioTexts }, // will be passed to the page component as props
+  };
 }
 
-export default Page
+export default Artur;
