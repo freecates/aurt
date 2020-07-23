@@ -6,6 +6,18 @@ const FooterSecond = (props) => (
     <div>
       <section>
         <a
+          href='https://www.slowfood.barcelona/'
+          target='_blank'
+          rel='noopener'>
+          <img
+            src='/static/slow-food.svg'
+            className=''
+            alt='Logo Slow Food Barcelona'
+          />
+        </a>
+      </section>
+      <section>
+        <a
           href='https://twitter.com/aurtrestaurant'
           target='_blank'
           rel='noopener'>
