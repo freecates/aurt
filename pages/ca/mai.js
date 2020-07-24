@@ -54,7 +54,7 @@ const Page = (props) => (
     </Head>
     <ItemStyles>
       <Title>
-        <img src={props.post.logo} style={{ width: '268px', height: '85px' }} />
+        <img loading='lazy' src={props.post.logo} style={{ width: '268px', height: '85px' }} />
       </Title>
       <TextSeparator>
         <div className='here' />
@@ -63,7 +63,7 @@ const Page = (props) => (
         <div key={id}>
           {notLastmaiBlock.logo && (
             <SubTitle>
-              <img
+              <img loading='lazy'
                 src={notLastmaiBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />

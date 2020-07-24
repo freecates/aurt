@@ -60,7 +60,7 @@ export default class Item extends React.Component {
           )}
         </SubTitle>
         {item.node.featuredImage && (
-          <img
+          <img loading='lazy'
             style={{ padding: '3rem 0 0' }}
             src={item.node.featuredImage.sourceUrl}
             alt={item.node.title}

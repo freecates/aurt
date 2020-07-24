@@ -31,7 +31,7 @@ class MenuReservation extends React.Component {
                     <Link href={menuModalItem.path} >
                       <a title={menuModalItem.name} id={menuModalItem.id}>
                         {ruta.includes('/en') ? (
-                          <img
+                          <img loading='lazy'
                             title={menuModalItem.name}
                             src="/static/reservation.svg"
                             style={{
@@ -41,7 +41,7 @@ class MenuReservation extends React.Component {
                             }}
                           />
                         ) : (
-                          <img
+                          <img loading='lazy'
                             title={menuModalItem.name}
                             src="/static/reservar.svg"
                             style={{

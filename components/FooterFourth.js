@@ -5,7 +5,7 @@ const FooterFourth = props => (
   <FooterStyles ruta={props.ruta} className="fourth">
     <div>
       <section>
-        <img
+        <img loading='lazy'
           src="/static/newsletter.svg"
           className="sn"
           alt="Logo Newsletter"

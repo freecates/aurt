@@ -132,7 +132,7 @@ export default class LaGaleria extends React.Component {
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
-                        <img
+                        <img loading='lazy'
                           alt='logo instagram'
                           src='/static/Instagram_black.svg'
                           style={{

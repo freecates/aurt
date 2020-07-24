@@ -41,7 +41,7 @@ const Page = (props) => (
           <SubTitle>{notLasthorariosBlock.title}</SubTitle>
           {notLasthorariosBlock.logo && (
             <SubTitle>
-              <img
+              <img loading='lazy'
                 src={notLasthorariosBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />

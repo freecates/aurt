@@ -62,7 +62,7 @@ const Page = (props) => (
       {props.notLastmemberBlocks.map((notLastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <img
+            <img loading='lazy'
               src={notLastmemberBlock.picture}
               style={{ width: '173px', height: '173px', borderRadius: '50%' }}
             />
@@ -107,7 +107,7 @@ const Page = (props) => (
                   }
                   target='_blank'
                   title={'Instragram' + notLastmemberBlock.instagram}>
-                  <img
+                  <img loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
                     style={{
@@ -137,7 +137,7 @@ const Page = (props) => (
       {props.lastmemberBlocks.map((lastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <img
+            <img loading='lazy'
               src={lastmemberBlock.picture}
               style={{ width: '173px', height: '173px', borderRadius: '50%' }}
             />
@@ -182,7 +182,7 @@ const Page = (props) => (
                   }
                   target='_blank'
                   title={'Instragram' + lastmemberBlock.instagram}>
-                  <img
+                  <img loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
                     style={{

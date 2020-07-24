@@ -183,7 +183,7 @@ export default class SingleItem extends React.Component {
                   <div className="medium here" />
                 </TextSeparator>
                 {post.featuredImage && (
-                  <img src={post.featuredImage.sourceUrl} alt={post.title} />
+                  <img loading='lazy' src={post.featuredImage.sourceUrl} alt={post.title} />
                 )}
                 <div className="details">
                   <h2 style={{ marginBottom: '0' }}>

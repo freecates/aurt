@@ -173,14 +173,14 @@ const Header = props => {
         {props.ruta.includes('/en') && (
           <Link href="/en" >
             <a>
-              <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
+              <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
             </a>
           </Link>
         )}
         {props.ruta.includes('/ca') && (
           <Link href="/ca" >
             <a>
-              <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
+              <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
             </a>
           </Link>
         )}
@@ -188,7 +188,7 @@ const Header = props => {
           (props.ruta.indexOf('/en') == -1 && (
             <Link href="/" >
               <a>
-                <img src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
+                <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
               </a>
             </Link>
           ))}

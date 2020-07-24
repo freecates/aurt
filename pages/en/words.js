@@ -68,7 +68,7 @@ const Page = (props) => (
           </TextBlock>
           <TextBlock>
             <div className='center'>
-              <img
+              <img loading='lazy'
                 src={'/static/aurt-dos-punts.svg'}
                 style={{ width: '41px', height: '15px' }}
               />

@@ -9,7 +9,7 @@ const FooterSecond = (props) => (
           href='https://www.slowfood.barcelona/'
           target='_blank'
           rel='noopener'>
-          <img
+          <img loading='lazy'
             src='/static/slow-food.svg'
             className=''
             alt='Logo Slow Food Barcelona'
@@ -21,19 +21,19 @@ const FooterSecond = (props) => (
           href='https://twitter.com/aurtrestaurant'
           target='_blank'
           rel='noopener'>
-          <img src='/static/twitter.svg' className='sn' alt='Logo Twitter' />
+          <img loading='lazy' src='/static/twitter.svg' className='sn' alt='Logo Twitter' />
         </a>
         <a href='https://www.facebook.com/aurtrestaurant/'>
-          <img src='/static/facebook.svg' className='sn' alt='Logo Facebook' />
+          <img loading='lazy' src='/static/facebook.svg' className='sn' alt='Logo Facebook' />
         </a>
         <a href='https://www.youtube.com/channel/UCjaXo2Ys8A3jFhMZd22fxmQ'>
-          <img src='/static/youtube.svg' className='sn' alt='Logo Youtube' />
+          <img loading='lazy' src='/static/youtube.svg' className='sn' alt='Logo Youtube' />
         </a>
         <a
           href='https://www.instagram.com/aurtrestaurant/'
           target='_blank'
           rel='noopener'>
-          <img
+          <img loading='lazy'
             src='/static/instagram.svg'
             className='sn'
             alt='Logo Instagram'

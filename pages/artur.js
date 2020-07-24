@@ -54,7 +54,7 @@ return (
     </Head>
     <ItemStyles>
       <SubTitle>
-        <img
+        <img loading='lazy'
           className='with-margin'
           alt='artur martínez'
           src={props.post.picture}
@@ -70,7 +70,7 @@ return (
             target='_blank'
             rel='noopener'
             title={'Instragram' + props.post.instagram}>
-            <img
+            <img loading='lazy'
               alt='logo instagram '
               src='/static/Instagram_black.svg'
               style={{

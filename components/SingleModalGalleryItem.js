@@ -107,7 +107,7 @@ class SingleModalGalleryItem extends React.Component {
                   )}
                   {singleModalItem.mediaType == 'image' && (
                     <figure onClick={this.show.bind(this)}>
-                      <img
+                      <img loading='lazy'
                         src={singleModalItem.src}
                         style={{ cursor: 'pointer' }}
                         id={singleModalItem.id}
@@ -130,7 +130,7 @@ class SingleModalGalleryItem extends React.Component {
                         <React.Fragment>
                           <AlignLeftMenutitle key={id}>
                             {item.mediaType == 'image' && (
-                              <img src={item.srcOpen} />
+                              <img loading='lazy' src={item.srcOpen} />
                             )}{' '}
                             {item.mediaType == 'file' && (
                               <video controls>

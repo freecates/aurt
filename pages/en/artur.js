@@ -53,7 +53,7 @@ const Page = (props) => (
     </Head>
     <ItemStyles>
       <SubTitle>
-        <img
+        <img loading='lazy'
           className='with-margin'
           alt='artur martínez'
           src={props.post.picture}
@@ -69,7 +69,7 @@ const Page = (props) => (
             target='_blank'
             rel='noopener'
             title={'Instragram' + props.post.instagram}>
-            <img
+            <img loading='lazy'
               alt='logo instagram '
               src='/static/Instagram_black.svg'
               style={{
