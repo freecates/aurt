@@ -3,7 +3,7 @@ const Loader = () => (
     <div className='loader'>
       <div className='advice'>
         <h1>
-          <span>CA</span> JULIOL i AGOST obert djious, divendres i dissabtes nit
+          <span>CA</span> JULIOL i AGOST obert dijous, divendres i dissabtes nit
         </h1>
         <h1>
           <span>ES</span> JULIO y AGOSTO abierto jueves, viernes y sábados noche
