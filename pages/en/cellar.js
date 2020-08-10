@@ -113,9 +113,9 @@ const Page = (props) => (
       </TextSeparator>
       <SubTitle>
         {' '}
-        VEURE
+        SEE
         <Link href='/en/wines'>
-          <a>CARTA DE VINS</a>
+          <a>WINE LIST</a>
         </Link>
       </SubTitle>
     </ItemStyles>
