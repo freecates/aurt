@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const Pdf = styled.div`
   canvas {
     margin: 0 auto;
+    max-width: 100%;
+    height:auto!important;
   }
 `;
 
@@ -82,7 +84,7 @@ const MyPdfViewer = (props) => {
       <Document
         file={props.file}
         onLoadSuccess={onDocumentLoadSuccess}
-        loading={<Loading lang={props.ruta} />}>
+        loading={<Loading lang={props.ruta} />} renderMode={'canvas'}>
         <Page pageNumber={pageNumber} />
       </Document>
       <NavPdf>
