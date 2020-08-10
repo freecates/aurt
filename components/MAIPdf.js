@@ -28,15 +28,15 @@ const MAIPdf = props => (
       </TextSeparator>
       {props.ruta.includes('/ca') && (
         <MyPdfViewer
-          file={props.file}
+          file={props.file} ruta={props.ruta}
         />
       )}
       {props.ruta.includes('/en') && (
-        <MyPdfViewer file={props.file} />
+        <MyPdfViewer file={props.file} ruta={props.ruta} />
       )}
       {props.ruta.indexOf('/ca') == -1 &&
         (props.ruta.indexOf('/en') == -1 && (
-          <MyPdfViewer file={props.file} />
+          <MyPdfViewer file={props.file} ruta={props.ruta} />
         ))}
       <h2 className="text-center">
         {props.ruta.indexOf('/ca') == -1 &&

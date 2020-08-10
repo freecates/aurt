@@ -1,6 +1,12 @@
-import React, { useState, useRef } from 'react';
-import { usePdf } from '@mikecousins/react-pdf';
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import { Document, Page } from 'react-pdf';
+import styled from 'styled-components';
+
+const Pdf = styled.div`
+  canvas {
+    margin: 0 auto;
+  }
+`;
 
 const NavPdf = styled.nav`
   li {
@@ -13,8 +19,8 @@ const NavPdf = styled.nav`
     float: right;
   }
   button {
-    background:none;
-    border:none;
+    background: none;
+    border: none;
   }
   button:focus {
     outline: none;
@@ -36,42 +42,70 @@ const NavPdf = styled.nav`
     display: block;
     clear: both;
   }
-`
+`;
+
+const Loading = ({ lang }) => {
+  return (
+    <p style={{ textAlign: 'center' }}>
+      {lang.includes('/ca') && <span>... Carregant</span>}
+      {lang.includes('/en') && <span>... Loading</span>}
+      {lang.indexOf('/ca') == -1 && lang.indexOf('/en') == -1 && (
+        <span>... Cargando</span>
+      )}
+    </p>
+  );
+};
 
 const MyPdfViewer = (props) => {
-  const [page, setPage] = useState(1);
-  const canvasRef = useRef(null);
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
-  const { pdfDocument, pdfPage } = usePdf({
-    file: props.file,
-    page,
-    canvasRef,
-  });
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+    setPageNumber(1);
+  };
+
+  const changePage = (offset) => {
+    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  };
+
+  const previousPage = () => {
+    changePage(-1);
+  };
+
+  const nextPage = () => {
+    changePage(1);
+  };
 
   return (
-    <div>
-      {!pdfDocument && <span>Loading...</span>}
-      <canvas ref={canvasRef} style={{margin: '0 auto', display: 'block'}}/>
-      {Boolean(pdfDocument && pdfDocument.numPages) && (
-        <NavPdf>
-          <ul className="pager">
-            <li className="previous">
-              <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-                {'<<'}
-              </button>
-            </li>
-            <li className="next">
-              <button
-                disabled={page === pdfDocument.numPages}
-                onClick={() => setPage(page + 1)}
-              >
-                {'>>'}
-              </button>
-            </li>
-          </ul>
-        </NavPdf>
-      )}
-    </div>
+    <Pdf>
+      <Document
+        file={props.file}
+        onLoadSuccess={onDocumentLoadSuccess}
+        loading={<Loading lang={props.ruta} />}>
+        <Page pageNumber={pageNumber} />
+      </Document>
+      <NavPdf>
+        <ul className='pager'>
+          <li className='previous'>
+            <button
+              type='button'
+              disabled={pageNumber <= 1}
+              onClick={previousPage}>
+              {'<<'}
+            </button>
+          </li>
+          <li className='next'>
+            <button
+              type='button'
+              disabled={pageNumber >= numPages}
+              onClick={nextPage}>
+              {'>>'}
+            </button>
+          </li>
+        </ul>
+      </NavPdf>
+    </Pdf>
   );
 };
 

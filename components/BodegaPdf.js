@@ -28,7 +28,7 @@ const BodegaPdf = (props) => {
           <div className='here' />
         </TextSeparator>
         {props.ruta.includes('/ca') && (
-          <MyPdfViewer file={props.file} />
+          <MyPdfViewer file={props.file} ruta={props.ruta} />
           /* <Iframe
           url="https://wp.aurtrestaurant.com/207-2/"
           width="100%"
@@ -41,10 +41,10 @@ const BodegaPdf = (props) => {
         /> */
         )}
         {props.ruta.includes('/en') && (
-          <MyPdfViewer file={props.file} />
+          <MyPdfViewer file={props.file} ruta={props.ruta} />
         )}
         {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
-          <MyPdfViewer file={props.file} />
+          <MyPdfViewer file={props.file} ruta={props.ruta} />
         )}
         <h2 className='text-center'>
           {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
