@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
 import TextBlock from '../../components/styles/TextBlock';
+import TeamImg from '../../components/TeamImg';
 import TextSeparator from '../../components/styles/TextSeparator';
 import ItemStyles from '../../components/styles/ItemStyles';
 import Head from 'next/head';
@@ -61,10 +62,7 @@ const Page = (props) => (
       {props.notLastmemberBlocks.map((notLastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <img loading='lazy'
-              src={notLastmemberBlock.picture}
-              style={{ width: '173px', height: '173px', borderRadius: '50%' }}
-            />
+            <TeamImg src={notLastmemberBlock.picture} width={173} height={173}/>
           </SubTitle>
           <SubTitle>{notLastmemberBlock.name}</SubTitle>
           <TextBlock>
@@ -136,10 +134,7 @@ const Page = (props) => (
       {props.lastmemberBlocks.map((lastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <img loading='lazy'
-              src={lastmemberBlock.picture}
-              style={{ width: '173px', height: '173px', borderRadius: '50%' }}
-            />
+            <TeamImg src={lastmemberBlock.picture} width={173} height={173}/>
           </SubTitle>
           <SubTitle>{lastmemberBlock.name}</SubTitle>
           <TextBlock>
