@@ -14,6 +14,10 @@ const RodalStyles = styled.section`
     position: fixed;
   }
 
+  .rodal:focus {
+    outline: none;
+  }
+
   /* -- mask -- */
   .rodal-mask {
     position: absolute;
