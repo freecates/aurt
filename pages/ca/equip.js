@@ -2,7 +2,7 @@ import InnerLayout from '../../components/InnerLayout';
 import fetch from 'isomorphic-unfetch';
 import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
-import TeamImg from '../../components/TeamImg';
+import BlockImg from '../../components/BlockImg';
 import TextBlock from '../../components/styles/TextBlock';
 import TextSeparator from '../../components/styles/TextSeparator';
 import ItemStyles from '../../components/styles/ItemStyles';
@@ -62,7 +62,7 @@ const Page = (props) => (
       {props.notLastmemberBlocks.map((notLastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <TeamImg src={notLastmemberBlock.picture} width={173} height={173}/>
+            <BlockImg src={notLastmemberBlock.picture} width={173} height={173} alt={notLastmemberBlock.name} borderRadius/>
           </SubTitle>
           <SubTitle>{notLastmemberBlock.name}</SubTitle>
           <TextBlock>
@@ -134,7 +134,7 @@ const Page = (props) => (
       {props.lastmemberBlocks.map((lastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <TeamImg src={lastmemberBlock.picture} width={173} height={173}/>
+            <BlockImg src={lastmemberBlock.picture} width={173} height={173} alt={lastmemberBlock.name} borderRadius/>
           </SubTitle>
           <SubTitle>{lastmemberBlock.name}</SubTitle>
           <TextBlock>

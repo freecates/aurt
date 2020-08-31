@@ -3,6 +3,7 @@ import InnerLayout from '../components/InnerLayout';
 import Title from '../components/styles/Title';
 import SubTitle from '../components/styles/SubTitle';
 import TextBlock from '../components/styles/TextBlock';
+import BlockImg from '../components/BlockImg';
 import TextSeparator from '../components/styles/TextSeparator';
 import ItemStyles from '../components/styles/ItemStyles';
 import Head from 'next/head';
@@ -53,8 +54,8 @@ const Page = (props) => (
       <meta property='og:image:height' content='1024' />
     </Head>
     <ItemStyles>
-      <Title>
-        <img loading='lazy' src={props.post.logo} style={{ width: '268px', height: '85px' }} />
+      <Title>       
+        <BlockImg src={props.post.logo} width={'258'} height={'85'} alt={props.post.title}/>
       </Title>
       <TextSeparator>
         <div className='here' />
@@ -63,10 +64,7 @@ const Page = (props) => (
         <div key={id}>
           {notLastmaiBlock.logo && (
             <SubTitle>
-              <img loading='lazy'
-                src={notLastmaiBlock.logo}
-                style={{ width: '58px', height: '19px' }}
-              />
+              <BlockImg src={notLastmaiBlock.logo} width={'58'} height={'19'} alt={notLastmaiBlock.title}/>
             </SubTitle>
           )}
           {notLastmaiBlock.title && (

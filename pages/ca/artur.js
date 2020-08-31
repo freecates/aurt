@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../../components/InnerLayout';
 import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
+import BlockImg from '../../components/BlockImg';
 import TextBlock from '../../components/styles/TextBlock';
 import TextSeparator from '../../components/styles/TextSeparator';
 import ItemStyles from '../../components/styles/ItemStyles';
@@ -53,12 +54,7 @@ const Page = (props) => (
     </Head>
     <ItemStyles>
       <SubTitle>
-        <img loading='lazy'
-          className='with-margin'
-          alt='artur martínez'
-          src={props.post.picture}
-          style={{ width: '173px', height: '173px', borderRadius: '50%' }}
-        />
+          <BlockImg src={props.post.picture} width={173} height={173} alt={`artur martínez`} className={`with-margin`} borderRadius />
       </SubTitle>
       <Title>{props.post.title}</Title>
       <SubTitle>{props.post.subTitle}</SubTitle>
