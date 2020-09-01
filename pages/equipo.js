@@ -62,7 +62,13 @@ const Page = (props) => (
       {props.notLastmemberBlocks.map((notLastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <BlockImg src={notLastmemberBlock.picture} width={173} height={173} alt={notLastmemberBlock.name} borderRadius/>
+            <BlockImg
+              src={notLastmemberBlock.picture}
+              width={173}
+              height={173}
+              alt={notLastmemberBlock.name}
+              borderRadius
+            />
           </SubTitle>
           <SubTitle>{notLastmemberBlock.name}</SubTitle>
           <TextBlock>
@@ -103,8 +109,11 @@ const Page = (props) => (
                     'https://www.instagram.com/' + notLastmemberBlock.instagram
                   }
                   target='_blank'
-                  title={'Instragram' + notLastmemberBlock.instagram}>
-                  <img loading='lazy'
+                  title={'Instragram' + notLastmemberBlock.instagram}
+                  rel={'noopener'}
+                  rel={'noreferrer'}>
+                  <img
+                    loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
                     style={{
@@ -120,7 +129,9 @@ const Page = (props) => (
                     'https://www.instagram.com/' + notLastmemberBlock.instagram
                   }
                   target='_blank'
-                  title={'Instragram' + notLastmemberBlock.instagram}>
+                  title={'Instragram' + notLastmemberBlock.instagram}
+                  rel={'noopener'}
+                  rel={'noreferrer'}>
                   <span>@{notLastmemberBlock.instagram}</span>
                 </a>
               </div>
@@ -134,7 +145,13 @@ const Page = (props) => (
       {props.lastmemberBlocks.map((lastmemberBlock, id) => (
         <div key={id}>
           <SubTitle>
-            <BlockImg src={lastmemberBlock.picture} width={173} height={173} alt={lastmemberBlock.name} borderRadius/>
+            <BlockImg
+              src={lastmemberBlock.picture}
+              width={173}
+              height={173}
+              alt={lastmemberBlock.name}
+              borderRadius
+            />
           </SubTitle>
           <SubTitle>{lastmemberBlock.name}</SubTitle>
           <TextBlock>
@@ -176,7 +193,8 @@ const Page = (props) => (
                   }
                   target='_blank'
                   title={'Instragram' + lastmemberBlock.instagram}>
-                  <img loading='lazy'
+                  <img
+                    loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
                     style={{
