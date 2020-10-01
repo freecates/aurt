@@ -62,7 +62,8 @@ const contentStyle = {
   border: 'none',
   position: 'absolute',
   left: '25%',
-  top: '10%'
+  top: '10%',
+  zIndex: 3001
 }
 
 const Center = styled.div`

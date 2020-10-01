@@ -100,7 +100,6 @@ const StyleHeader = styled.header`
       background: #ffffff;
       grid-template-columns: minmax(auto, 5vw) 1fr auto minmax(auto, 5vw);
       justify-content: center;
-      grid-template-rows: auto;
       .left,
       .right,
       .lang-menu {
