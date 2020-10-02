@@ -22,6 +22,7 @@ const SingleItemStyles = styled.div`
     width: 100%;
     max-height: 780px;
     object-fit: contain;
+    height: auto;
   }
   .details {
     margin: 0 1rem;
@@ -88,6 +89,8 @@ export const MEDIA_ITEMS_QUERY = gql`
           mediaType
           sourceUrl
           mediaDetails {
+            height
+            width
             sizes {
               name
               file
@@ -135,6 +138,8 @@ export default class LaGaleria extends React.Component {
                         <img loading='lazy'
                           alt='logo instagram'
                           src='/static/Instagram_black.svg'
+                          width='28'
+                          height='28'
                           style={{
                             width: '28px',
                             height: '28px',
@@ -165,11 +170,17 @@ export default class LaGaleria extends React.Component {
                                   src:
                                     galeriaMedia.node.mediaDetails.sizes[0]
                                       .sourceUrl,
+                                  width: galeriaMedia.node.mediaDetails.sizes[0]
+                                  .width,
+                                  height: galeriaMedia.node.mediaDetails.sizes[0]
+                                  .height,
                                   items: [
                                     {
                                       id: galeriaMedia.node.id,
                                       mediaType: galeriaMedia.node.mediaType,
                                       srcOpen: galeriaMedia.node.sourceUrl,
+                                      width: galeriaMedia.node.mediaDetails.sizes[2].width,
+                                      height: galeriaMedia.node.mediaDetails.sizes[2].height,
                                       class: 'left',
                                     },
                                   ],

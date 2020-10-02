@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { Query } from '@apollo/client/react/components';
 import Error from './ErrorMessage';
@@ -7,7 +6,6 @@ import styled from 'styled-components';
 import InnerLayout from './InnerLayout';
 import TextBlock from './styles/TextBlock';
 
-const propTypes = {};
 
 const SingleItemStyles = styled.div`
   max-width: 1200px;
@@ -107,6 +105,8 @@ export default class LaGaleria extends React.Component {
                       <img loading='lazy'
                         alt='logo instagram'
                         src='/static/Instagram_black.svg'
+                        width='28'
+                        height='28'
                         style={{
                           width: '28px',
                           height: '28px',
@@ -139,7 +139,5 @@ export default class LaGaleria extends React.Component {
     );
   }
 }
-
-LaGaleria.propTypes = propTypes;
 LaGaleria.defaultProps = defaultProps;
 LaGaleria.SINGLE_PAGE_QUERY = SINGLE_PAGE_QUERY;

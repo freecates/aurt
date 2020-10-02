@@ -52,7 +52,6 @@ const RodalItem = styled.div`
 const customStyles = {
   margin: 0,
   backgroundColor: 'transparent',
-  overflowY: 'auto'
 }
 
 const Center = styled.div`
@@ -109,6 +108,8 @@ class SingleModalGalleryItem extends React.Component {
                     <figure onClick={this.show.bind(this)}>
                       <img loading='lazy'
                         src={singleModalItem.src}
+                        width={singleModalItem.width}
+                        height={singleModalItem.height}
                         style={{ cursor: 'pointer' }}
                         id={singleModalItem.id}
                       />
@@ -130,7 +131,7 @@ class SingleModalGalleryItem extends React.Component {
                         <React.Fragment>
                           <AlignLeftMenutitle key={id}>
                             {item.mediaType == 'image' && (
-                              <img loading='lazy' src={item.srcOpen} />
+                              <img loading='lazy' src={item.srcOpen} width={item.width} height={item.height} />
                             )}{' '}
                             {item.mediaType == 'file' && (
                               <video controls>
