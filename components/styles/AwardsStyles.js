@@ -8,6 +8,7 @@ const AwardsStyles = styled.span`
   margin-top: -2rem;
   img {
     height: 50px;
+    width: auto;
     &.home {
       margin-top: 4rem;
       margin-right: 1.5rem;

@@ -9,6 +9,8 @@ const FooterFourth = props => (
           src="/static/newsletter.svg"
           className="sn"
           alt="Logo Newsletter"
+          width='32'
+          height='32'
         />
         <br />
 

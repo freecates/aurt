@@ -1,21 +1,21 @@
-import Link from 'next/link'
-import styled from 'styled-components'
-import routerEvents from 'next-router-events'
-import Router from 'next/router'
-import NProgress from 'nprogress'
-import Nav from './Nav'
+import Link from 'next/link';
+import styled from 'styled-components';
+import routerEvents from 'next-router-events';
+import NProgress from 'nprogress';
+import Nav from './Nav';
+import Logo from './Logo';
 
 routerEvents.on('routeChangeStart', () => {
-  NProgress.start()
-})
+  NProgress.start();
+});
 routerEvents.on('routeChangeComplete', () => {
-  NProgress.done()
-})
+  NProgress.done();
+});
 routerEvents.on('routeChangeError', () => {
-  NProgress.done()
-})
+  NProgress.done();
+});
 
-const Logo = styled.h1`
+const LogoSection = styled.h1`
   grid-column: 3;
   grid-row: 1;
   font-size: 4rem;
@@ -33,7 +33,7 @@ const Logo = styled.h1`
     margin: 0;
     text-align: center;
   }
-`
+`;
 
 const StyleHeader = styled.header`
   .bar {
@@ -155,45 +155,45 @@ const StyleHeader = styled.header`
   .sub-bar {
     display: grid;
     grid-template-columns: 1fr auto;
-    border-bottom: 1px solid ${props => props.theme.lightGrey};
+    border-bottom: 1px solid ${(props) => props.theme.lightGrey};
   }
-`
+`;
 
-const Header = props => {
+const Header = (props) => {
   return (
-  <StyleHeader>
-    <div className="bar">
-      <Nav
-        content={props.content}
-        langMenu={props.langMenu}
-        ruta={props.ruta}
-      />
-      <Logo>
-        {props.ruta.includes('/en') && (
-          <Link href="/en" >
-            <a>
-              <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
-            </a>
-          </Link>
-        )}
-        {props.ruta.includes('/ca') && (
-          <Link href="/ca" >
-            <a>
-              <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
-            </a>
-          </Link>
-        )}
-        {props.ruta.indexOf('/ca') == -1 &&
-          (props.ruta.indexOf('/en') == -1 && (
-            <Link href="/" >
+    <StyleHeader>
+      <div className='bar'>
+        <Nav
+          content={props.content}
+          langMenu={props.langMenu}
+          ruta={props.ruta}
+        />
+        <LogoSection>
+          {props.ruta.includes('/en') && (
+            <Link href='/en'>
               <a>
-                <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" />
+                <Logo />
               </a>
             </Link>
-          ))}
-      </Logo>
-    </div>
-  </StyleHeader>
-)}
+          )}
+          {props.ruta.includes('/ca') && (
+            <Link href='/ca'>
+              <a>
+                <Logo />
+              </a>
+            </Link>
+          )}
+          {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
+            <Link href='/'>
+              <a>
+                <Logo />
+              </a>
+            </Link>
+          )}
+        </LogoSection>
+      </div>
+    </StyleHeader>
+  );
+};
 
-export default Header
+export default Header;

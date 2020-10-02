@@ -28,6 +28,14 @@ export const ALL_POSTS_QUERY = gql`
           featuredImage {
             id
             sourceUrl
+            mediaDetails {
+              width
+              sizes {
+                height
+                sourceUrl
+                width
+              }
+            }
           }
           content(format: RAW)
         }
