@@ -131,7 +131,7 @@ class SingleModalGalleryItem extends React.Component {
                         <React.Fragment>
                           <AlignLeftMenutitle key={id}>
                             {item.mediaType == 'image' && (
-                              <img loading='lazy' src={item.srcOpen} width={item.width} height={item.height} />
+                              <img loading='lazy' src={item.srcOpen} width={item.width} height={item.height} alt={'Aurt Restaurant photo'} />
                             )}{' '}
                             {item.mediaType == 'file' && (
                               <video controls>
