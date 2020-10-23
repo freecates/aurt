@@ -8,7 +8,7 @@ export default function ImportMDFileWithHooks(props) {
 
   useEffect(() => {
     async function updateContentFromFileName(fileName) {
-      const res = await fetch(`https://aurtdata.now.sh/data/${fileName}`)
+      const res = await fetch(`https://aurt-data.vercel.app/data/${fileName}`)
       const filename = fileName
       const content = await res.text()
       setContent(content)

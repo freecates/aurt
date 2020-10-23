@@ -100,7 +100,7 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/palabras.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/palabras.json`);
   const post = await res.json();
 
   const notLastpalabras = post.palabras.slice(0, -1);

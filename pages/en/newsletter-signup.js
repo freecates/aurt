@@ -54,7 +54,7 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/en/mailchimp.html`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/en/mailchimp.html`);
   const content = await res.text();
   return {
     props: { content },

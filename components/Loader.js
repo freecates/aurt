@@ -1,20 +1,6 @@
 const Loader = () => (
   <div className='container'>
     <div className='loader'>
-      <div className='advice'>
-        <h1>
-          <span>CA</span> SETEMBRE i OCTUBRE obert dijous, divendres i dissabtes
-          nit
-        </h1>
-        <h1>
-          <span>ES</span> SEPTIEMBRE y OCTUBRE abierto jueves, viernes y sábados
-          noche
-        </h1>
-        <h1>
-          <span>EN</span> SEPTEMBER & OCTOBER open Thursday, Friday and Saturday
-          night
-        </h1>
-      </div>
     </div>
     <style jsx>{`
       .container {

@@ -11,7 +11,7 @@ function Home(props) {
     const timeoutId = setTimeout(() => {
       props.pageTransitionReadyToEnter();
       setLoaded({ loaded: true });
-    }, 6950);
+    }, 1950);
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };

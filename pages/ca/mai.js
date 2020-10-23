@@ -119,7 +119,7 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/ca/mai.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/ca/mai.json`);
   const post = await res.json();
   const noOKDescription = post.maiBlocks[0].bioText;
   const description = noOKDescription

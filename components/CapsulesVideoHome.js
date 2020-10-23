@@ -12,16 +12,16 @@ const CapsulesVideoHome = () => (
       style={{ zIndex: '2998' }}
     >
       <source
-        src="https://aurtdata.now.sh/static/capsula-aurt-web.webm"
+        src="https://aurt-data.vercel.app/static/capsula-aurt-web.webm"
         type="video/webm"
       />
       <source
-        src="https://aurtdata.now.sh/static/capsula-aurt-web.mp4"
+        src="https://aurt-data.vercel.app/static/capsula-aurt-web.mp4"
         type="video/mp4"
       />
       <p>
         Your browser doesn't support HTML5 video. Here is a{' '}
-        <a href="https://aurtdata.now.sh/static/capsula-aurt-web.mp4">
+        <a href="https://aurt-data.vercel.app/static/capsula-aurt-web.mp4">
           link to the video
         </a>{' '}
         instead.

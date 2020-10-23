@@ -104,7 +104,7 @@ return (
 )};
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/artur.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/artur.json`);
   const post = await res.json();
 
   const bioTexts = [

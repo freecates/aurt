@@ -96,7 +96,7 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/direccion.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/direccion.json`);
   const post = await res.json();
 
   const notLastdireccionBlocks = post.direccionBlocks.slice(0, -1);

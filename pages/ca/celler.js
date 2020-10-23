@@ -123,7 +123,7 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurtdata.now.sh/data/ca/celler.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/ca/celler.json`);
   const post = await res.json();
 
   const description = [

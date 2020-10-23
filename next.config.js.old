@@ -5,7 +5,7 @@ const nextConfig = {
     swDest: 'static/service-worker.js',
     runtimeCaching: [
       {
-        urlPattern: new RegExp('^https://aurtdata.now.sh/static/(.*)'),
+        urlPattern: new RegExp('^https://aurt-data.vercel.app/static/(.*)'),
         handler: 'CacheFirst'
         options: {
           cacheName: 'https-calls',
