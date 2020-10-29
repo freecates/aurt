@@ -5,6 +5,7 @@ import SubTitle from './styles/SubTitle';
 import TextBlock from './styles/TextBlock';
 import ItemStyles from './styles/ItemStyles';
 import { IntlProvider, FormattedDate } from 'react-intl';
+import Image from 'next/image';
 
 const propTypes = {
   item: PropTypes.object.isRequired,
@@ -60,7 +61,7 @@ export default class Item extends React.Component {
           )}
         </SubTitle>
         {item.node.featuredImage && (
-          <img loading='lazy'
+          <Image loading='lazy'
             style={{ padding: '3rem 0 0' }}
             src={item.node.featuredImage.mediaDetails.sizes[2].sourceUrl}
             alt={item.node.title}

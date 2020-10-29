@@ -1,6 +1,8 @@
+import Image from 'next/image';
+
 const BlockImg = ({ src, width, height, alt, className, borderRadius }) => {
   return (
-    <img
+    <Image
       loading='lazy'
       src={src}
       style={{

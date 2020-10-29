@@ -7,6 +7,7 @@ import Error from './ErrorMessage';
 import InnerLayout from './InnerLayout';
 import SingleModalGalleryItem from './SingleModalGalleryItem';
 import TextBlock from './styles/TextBlock';
+import Image from 'next/image';
 
 const propTypes = {
   ruta: PropTypes.object.isRequired,
@@ -135,7 +136,7 @@ export default class LaGaleria extends React.Component {
                         target='_blank'
                         rel='noopener'
                         title={'Instragram @aurtrestaurant'}>
-                        <img loading='lazy'
+                        <Image loading='lazy'
                           alt='logo instagram'
                           src='/static/Instagram_black.svg'
                           width='28'

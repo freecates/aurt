@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../components/InnerLayout';
 import Title from '../components/styles/Title';
@@ -41,7 +42,7 @@ const Page = (props) => (
           <SubTitle>{notLasthorariosBlock.title}</SubTitle>
           {notLasthorariosBlock.logo && (
             <SubTitle>
-              <img loading='lazy'
+              <Image loading='lazy'
                 src={notLasthorariosBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />

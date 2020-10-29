@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../../components/InnerLayout';
 import Title from '../../components/styles/Title';
@@ -65,9 +66,11 @@ const Page = (props) => (
             target='_blank'
             rel='noopener'
             title={'Instragram' + props.post.instagram}>
-            <img loading='lazy'
+            <Image loading='lazy'
               alt='logo instagram '
               src='/static/Instagram_black.svg'
+              width='28'
+              height='28'
               style={{
                 width: '28px',
                 height: '28px',

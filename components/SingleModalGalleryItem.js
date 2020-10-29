@@ -3,6 +3,7 @@ import Rodal from 'rodal'
 import styled from 'styled-components'
 import MenuTitle from './styles/MenuTitle'
 import RodalStyles from './styles/RodalStyles'
+import Image from 'next/image';
 
 const RodalItem = styled.div`
   .rodal-dialog {
@@ -106,7 +107,7 @@ class SingleModalGalleryItem extends React.Component {
                   )}
                   {singleModalItem.mediaType == 'image' && (
                     <figure onClick={this.show.bind(this)}>
-                      <img loading='lazy'
+                      <Image loading='lazy'
                         src={singleModalItem.src}
                         width={singleModalItem.width}
                         height={singleModalItem.height}
@@ -131,7 +132,7 @@ class SingleModalGalleryItem extends React.Component {
                         <React.Fragment>
                           <AlignLeftMenutitle key={id}>
                             {item.mediaType == 'image' && (
-                              <img loading='lazy' src={item.srcOpen} width={item.width} height={item.height} alt={'Aurt Restaurant photo'} />
+                              <Image loading='lazy' src={item.srcOpen} width={item.width} height={item.height} alt={'Aurt Restaurant photo'} />
                             )}{' '}
                             {item.mediaType == 'file' && (
                               <video controls>

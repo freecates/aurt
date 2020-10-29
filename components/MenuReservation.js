@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import RodalStyles from './styles/RodalStyles'
 import NavStyles from './styles/NavStyles'
+import Image from 'next/image';
 
 class MenuReservation extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class MenuReservation extends React.Component {
                     <Link href={menuModalItem.path} >
                       <a title={menuModalItem.name} id={menuModalItem.id}>
                         {ruta.includes('/en') ? (
-                          <img loading='lazy'
+                          <Image loading='lazy'
                             title={menuModalItem.name}
                             src="/static/reservation.svg"
                             style={{
@@ -41,9 +42,11 @@ class MenuReservation extends React.Component {
                             }}
                           />
                         ) : (
-                          <img loading='lazy'
+                          <Image loading='lazy'
                             title={menuModalItem.name}
                             src="/static/reservar.svg"
+                            width='120'
+                            height='120'
                             style={{
                               width: '120px',
                               height: '120px',

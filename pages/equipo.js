@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import InnerLayout from '../components/InnerLayout';
 import fetch from 'isomorphic-unfetch';
 import Title from '../components/styles/Title';
@@ -112,10 +113,12 @@ const Page = (props) => (
                   title={'Instragram' + notLastmemberBlock.instagram}
                   rel={'noopener'}
                   rel={'noreferrer'}>
-                  <img
+                  <Image
                     loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
+                    width='28'
+                    height='28'
                     style={{
                       width: '28px',
                       height: '28px',
@@ -193,10 +196,12 @@ const Page = (props) => (
                   }
                   target='_blank'
                   title={'Instragram' + lastmemberBlock.instagram}>
-                  <img
+                  <Image
                     loading='lazy'
                     alt='logo instagram '
                     src='/static/Instagram_black.svg'
+                    width='28'
+                    height='28'
                     style={{
                       width: '28px',
                       height: '28px',

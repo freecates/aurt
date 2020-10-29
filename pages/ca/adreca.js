@@ -30,7 +30,7 @@ const Page = (props) => (
           />
           {notLastdireccionBlock.logo && (
             <SubTitle>
-              <img loading='lazy'
+              <Image loading='lazy'
                 src={notLastdireccionBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />
@@ -81,7 +81,7 @@ const Page = (props) => (
                   ',' +
                   lastdireccionBlock.lng
                 }>
-                <img loading='lazy'
+                <Image loading='lazy'
                   src={lastdireccionBlock.logo}
                   style={{ width: '960', height: '960px' }}
                 />

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../components/InnerLayout';
 import Title from '../components/styles/Title';
@@ -31,7 +32,7 @@ const Page = (props) => (
           />
           {notLastdireccionBlock.logo && (
             <SubTitle>
-              <img loading='lazy'
+              <Image loading='lazy'
                 src={notLastdireccionBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />
@@ -82,7 +83,7 @@ const Page = (props) => (
                   ',' +
                   lastdireccionBlock.lng
                 }>
-                <img loading='lazy'
+                <Image loading='lazy'
                   src={lastdireccionBlock.logo}
                   style={{ width: '960', height: '960px' }}
                 />

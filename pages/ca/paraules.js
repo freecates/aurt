@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../../components/InnerLayout';
 import Title from '../../components/styles/Title';
@@ -68,7 +69,7 @@ const Page = (props) => (
           </TextBlock>
           <TextBlock>
             <div className='center'>
-              <img loading='lazy'
+              <Image loading='lazy'
                 src={'/static/aurt-dos-punts.svg'}
                 style={{ width: '41px', height: '15px' }}
               />

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import NavStyles from './styles/NavStyles';
+import Image from 'next/image';
 
 class MenuLang extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class MenuLang extends React.Component {
               <ul>
                 <li>
                   <h4>
-                    <img loading='lazy'
+                    <Image loading='lazy'
                       src='/static/ca_ES.svg'
                       alt='logo locale CA'
                       style={{ verticalAlign: 'middle' }}
@@ -41,7 +42,7 @@ class MenuLang extends React.Component {
                               <Link href={langMenu[langcode].path}>
                                 <a className='item' title={langcode}>
                                   {langcode == 'en' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/en_UK.svg'
                                       alt='logo locale EN'
                                       style={{ verticalAlign: 'middle' }}
@@ -50,7 +51,7 @@ class MenuLang extends React.Component {
                                     />
                                   )}
                                   {langcode == 'es' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/es_ES.svg'
                                       alt='logo locale ES'
                                       style={{ verticalAlign: 'middle' }}
@@ -77,7 +78,7 @@ class MenuLang extends React.Component {
               <ul>
                 <li>
                   <h4>
-                    <img loading='lazy'
+                    <Image loading='lazy'
                       src='/static/en_UK.svg'
                       alt='logo locale EN'
                       style={{ verticalAlign: 'middle' }}
@@ -96,7 +97,7 @@ class MenuLang extends React.Component {
                               <Link href={langMenu[langcode].path}>
                                 <a className='item' title={langcode}>
                                   {langcode == 'ca' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/ca_ES.svg'
                                       alt='logo locale CA'
                                       style={{ verticalAlign: 'middle' }}
@@ -105,7 +106,7 @@ class MenuLang extends React.Component {
                                     />
                                   )}
                                   {langcode == 'es' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/es_ES.svg'
                                       alt='logo locale ES'
                                       style={{ verticalAlign: 'middle' }}
@@ -132,7 +133,7 @@ class MenuLang extends React.Component {
               <ul>
                 <li>
                   <h4>
-                    <img loading='lazy'
+                    <Image loading='lazy'
                       src='/static/es_ES.svg'
                       alt='logo locale ES'
                       style={{ verticalAlign: 'middle' }}
@@ -151,7 +152,7 @@ class MenuLang extends React.Component {
                               <Link href={langMenu[langcode].path}>
                                 <a className='item' title={langcode}>
                                   {langcode == 'ca' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/ca_ES.svg'
                                       alt='logo locale CA'
                                       style={{ verticalAlign: 'middle' }}
@@ -160,7 +161,7 @@ class MenuLang extends React.Component {
                                     />
                                   )}
                                   {langcode == 'en' && (
-                                    <img loading='lazy'
+                                    <Image loading='lazy'
                                       src='/static/en_UK.svg'
                                       alt='logo locale EN'
                                       style={{ verticalAlign: 'middle' }}

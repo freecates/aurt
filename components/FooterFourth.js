@@ -1,11 +1,12 @@
 import FooterStyles from './styles/FooterStyles'
 import SingleModal from './SingleModal'
+import Image from 'next/image';
 
 const FooterFourth = props => (
   <FooterStyles ruta={props.ruta} className="fourth">
     <div>
       <section>
-        <img loading='lazy'
+        <Image loading='lazy'
           src="/static/newsletter.svg"
           className="sn"
           alt="Logo Newsletter"

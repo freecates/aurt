@@ -5,6 +5,7 @@ import Error from './ErrorMessage';
 import styled from 'styled-components';
 import InnerLayout from './InnerLayout';
 import TextBlock from './styles/TextBlock';
+import Image from 'next/image';
 
 
 const SingleItemStyles = styled.div`
@@ -102,7 +103,7 @@ export default class LaGaleria extends React.Component {
                       target='_blank'
                       rel='noopener'
                       title={'Instragram @aurtrestaurant'}>
-                      <img loading='lazy'
+                      <Image loading='lazy'
                         alt='logo instagram'
                         src='/static/Instagram_black.svg'
                         width='28'

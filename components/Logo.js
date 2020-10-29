@@ -1,6 +1,8 @@
+import Image from 'next/image';
+
 const Logo = () => {
     return (
-        <img loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" width='130' height='41' />
+        <Image loading='lazy' src="/static/logo-aurt-web.svg" alt="Logo Web AURT" width='130' height='41' />
     );
 };
 

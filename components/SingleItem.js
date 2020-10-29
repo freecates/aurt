@@ -9,6 +9,7 @@ import InnerLayout from './InnerLayout'
 import TextSeparator from './styles/TextSeparator'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image';
 
 const propTypes = {
   ruta: PropTypes.string.isRequired
@@ -183,7 +184,9 @@ export default class SingleItem extends React.Component {
                   <div className="medium here" />
                 </TextSeparator>
                 {post.featuredImage && (
-                  <img loading='lazy' src={post.featuredImage.sourceUrl} alt={post.title} />
+                  <Image loading='lazy' src={post.featuredImage.sourceUrl} alt={post.title} 
+                  width={post.featuredImage.mediaDetails.sizes[2].width}
+                  height={post.featuredImage.mediaDetails.sizes[2].height} />
                 )}
                 <div className="details">
                   <h2 style={{ marginBottom: '0' }}>

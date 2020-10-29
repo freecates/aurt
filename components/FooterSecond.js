@@ -1,5 +1,6 @@
 import SingleModal from './SingleModal';
 import FooterStyles from './styles/FooterStyles';
+import Image from 'next/image';
 
 const FooterSecond = (props) => (
   <FooterStyles ruta={props.ruta} className='second'>
@@ -9,7 +10,7 @@ const FooterSecond = (props) => (
           href='https://www.slowfood.barcelona/'
           target='_blank'
           rel='noopener'>
-          <img loading='lazy'
+          <Image loading='lazy'
             src='/static/slow-food.svg'
             className=''
             alt='Logo Slow Food Barcelona'
@@ -23,19 +24,19 @@ const FooterSecond = (props) => (
           href='https://twitter.com/aurtrestaurant'
           target='_blank'
           rel='noopener'>
-          <img loading='lazy' src='/static/twitter.svg' className='sn' alt='Logo Twitter' width='32' height='32' />
+          <Image loading='lazy' src='/static/twitter.svg' className='sn' alt='Logo Twitter' width='32' height='32' />
         </a>
         <a href='https://www.facebook.com/aurtrestaurant/'>
-          <img loading='lazy' src='/static/facebook.svg' className='sn' alt='Logo Facebook' width='32' height='32' />
+          <Image loading='lazy' src='/static/facebook.svg' className='sn' alt='Logo Facebook' width='32' height='32' />
         </a>
         <a href='https://www.youtube.com/channel/UCjaXo2Ys8A3jFhMZd22fxmQ'>
-          <img loading='lazy' src='/static/youtube.svg' className='sn' alt='Logo Youtube' width='32' height='32' />
+          <Image loading='lazy' src='/static/youtube.svg' className='sn' alt='Logo Youtube' width='32' height='32' />
         </a>
         <a
           href='https://www.instagram.com/aurtrestaurant/'
           target='_blank'
           rel='noopener'>
-          <img loading='lazy'
+          <Image loading='lazy'
             src='/static/instagram.svg'
             className='sn'
             alt='Logo Instagram' width='32' height='32'

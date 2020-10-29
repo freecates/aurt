@@ -7,6 +7,7 @@ import TextBlock from '../components/styles/TextBlock';
 import TextSeparator from '../components/styles/TextSeparator';
 import ItemStyles from '../components/styles/ItemStyles';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Artur = props => {
 return (
@@ -66,9 +67,11 @@ return (
             target='_blank'
             rel='noopener'
             title={'Instragram' + props.post.instagram}>
-            <img loading='lazy'
+            <Image loading='lazy'
               alt='logo instagram '
               src='/static/Instagram_black.svg'
+              width='28'
+              height='28'
               style={{
                 width: '28px',
                 height: '28px',
