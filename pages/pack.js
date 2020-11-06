@@ -85,14 +85,14 @@ const Page = (props) => (
           </TextBlock>
         </div>
       ))}
-      {props.lastmaiBlocks.map((lastmaiBlock, id) => (
+      {props.lastpackBlocks.map((lastpackBlock, id) => (
         <div key={id}>
-          <SubTitle>{lastmaiBlock.title}</SubTitle>
+          <SubTitle>{lastpackBlock.title}</SubTitle>
           <TextBlock>
             <div
-              className={lastmaiBlock.class}
+              className={lastpackBlock.class}
               dangerouslySetInnerHTML={{
-                __html: lastmaiBlock.bioText,
+                __html: lastpackBlock.bioText,
               }}
             />
           </TextBlock>
@@ -122,9 +122,9 @@ export async function getStaticProps() {
 
   const notLastpackBlocks = post.packBlocks.slice(0, -1);
 
-  const lastmaiBlocks = post.packBlocks.slice(-1);
+  const lastpackBlocks = post.packBlocks.slice(-1);
   return {
-    props: { post, notLastpackBlocks, lastmaiBlocks, description },
+    props: { post, notLastpackBlocks, lastpackBlocks, description },
   };
 }
 
