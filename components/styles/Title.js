@@ -20,6 +20,10 @@ const Title = styled.h1`
     display: inline;
     padding: 0 1rem;
   }
+  span {
+    font-weight: normal;
+    font-family: 'neutraface_text',sans-serif;
+  }
 `
 
 export default Title

@@ -4,8 +4,8 @@ const BlockImg = ({ src, width, height, alt, className, borderRadius }) => {
       loading='lazy'
       src={src}
       style={{
-        width: `${width}px`,
-        height: `${height}px`,
+        maxWidth: `${width}px`,
+        height: `auto`,
         borderRadius: borderRadius ? '50%' : null,
       }}
       className={className ? `${className}` : null}
