@@ -31,6 +31,12 @@ const SubTitle = styled.h2`
   img.with-margin {
     margin: 2rem 0 0;
   }
+  img.with-border-radius {
+    border-radius: 50%;
+  }
+  div {
+    margin: 0 auto;
+  }
 `
 
 export default SubTitle

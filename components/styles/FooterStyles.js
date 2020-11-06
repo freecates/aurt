@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const FooterStyles = styled.div`
   margin: 0;
@@ -18,12 +18,18 @@ const FooterStyles = styled.div`
   }
   a,
   .light-brown {
-    color: ${props => props.theme.mediumBrown};
+    color: ${(props) => props.theme.mediumBrown};
   }
   .sn {
     width: 32px;
     height: 32px;
   }
-`
+  a {
+    div:first-child {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+`;
 
-export default FooterStyles
+export default FooterStyles;

@@ -42,7 +42,7 @@ return (
       <meta property='og:type' content='article' />
       <meta
         property='og:title'
-        content={"AÜRT Restaurant | " + props.post.title + "Martínez"}
+        content={'AÜRT Restaurant | ' + props.post.title + 'Martínez'}
       />
       <meta property='og:description' content={props.bioTexts} />
       <meta
@@ -56,7 +56,13 @@ return (
     </Head>
     <ItemStyles>
       <SubTitle>
-          <BlockImg src={props.post.picture} width={173} height={173} alt={`artur martínez`} className={`with-margin`} borderRadius />
+        <BlockImg
+          src={props.post.picture}
+          width={173}
+          height={173}
+          alt={`artur martínez`}
+          className={`with-margin with-border-radius`}
+        />
       </SubTitle>
       <Title>{props.post.title}</Title>
       <SubTitle>{props.post.subTitle}</SubTitle>
@@ -67,18 +73,19 @@ return (
             target='_blank'
             rel='noopener'
             title={'Instragram' + props.post.instagram}>
-            <Image loading='lazy'
-              alt='logo instagram '
-              src='/static/Instagram_black.svg'
-              width='28'
-              height='28'
-              style={{
-                width: '28px',
-                height: '28px',
-                marginRight: '.25em',
-                verticalAlign: 'text-bottom',
-              }}
-            />
+              <Image
+                loading='lazy'
+                alt='logo instagram '
+                src='/static/Instagram_black.svg'
+                width='28'
+                height='28'
+                style={{
+                  width: '28px',
+                  height: '28px',
+                  marginRight: '.25em',
+                  verticalAlign: 'text-bottom',
+                }}
+              />
           </a>
           <a
             href={'https://www.instagram.com/' + props.post.instagram}
@@ -104,7 +111,7 @@ return (
       ))}
     </ItemStyles>
   </InnerLayout>
-)};
+);};
 
 export async function getStaticProps() {
   const res = await fetch(`https://aurt-data.vercel.app/data/artur.json`);

@@ -1,19 +1,15 @@
 import Image from 'next/image';
 
-const BlockImg = ({ src, width, height, alt, className, borderRadius }) => {
+const BlockImg = ({ src, width, height, alt, className }) => {
+  console.log('className ', className);
   return (
     <Image
       loading='lazy'
       src={src}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        borderRadius: borderRadius ? '50%' : null,
-      }}
-      className={className ? `${className}` : null}
       width={width}
       height={height}
       alt={alt}
+      className={className ? className : null}
     />
   );
 };
