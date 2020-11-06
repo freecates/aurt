@@ -54,41 +54,35 @@ const Page = (props) => (
       <meta property='og:image:height' content='1024' />
     </Head>
     <ItemStyles>
-      <Title>       
-        <BlockImg src={props.post.logo} width={'258'} height={'85'} alt={props.post.title}/>
-      </Title>
+      <Title
+        dangerouslySetInnerHTML={{
+          __html: props.post.title,
+        }}
+      />
       <TextSeparator>
         <div className='here' />
       </TextSeparator>
-      {props.notLastmaiBlocks.map((notLastmaiBlock, id) => (
+      <Title>
+        <BlockImg
+          src={props.post.logo}
+          width={'800'}
+          height={'300'}
+          alt={props.post.title}
+        />
+      </Title>
+      {props.notLastpackBlocks.map((notLastpackBlock, id) => (
         <div key={id}>
-          {notLastmaiBlock.logo && (
-            <SubTitle>
-              <BlockImg src={notLastmaiBlock.logo} width={'58'} height={'19'} alt={notLastmaiBlock.title}/>
-            </SubTitle>
-          )}
-          {notLastmaiBlock.title && (
-            <SubTitle>{notLastmaiBlock.title}</SubTitle>
+          {notLastpackBlock.title && (
+            <SubTitle>{notLastpackBlock.title}</SubTitle>
           )}
           <TextBlock>
             <div
-              className={notLastmaiBlock.class}
+              className={notLastpackBlock.class}
               dangerouslySetInnerHTML={{
-                __html: notLastmaiBlock.bioText,
+                __html: notLastpackBlock.bioText,
               }}
             />
           </TextBlock>
-          <TextBlock>
-            <div
-              className={notLastmaiBlock.class}
-              dangerouslySetInnerHTML={{
-                __html: notLastmaiBlock.schedule,
-              }}
-            />
-          </TextBlock>
-          <TextSeparator>
-            <div className='here' />
-          </TextSeparator>
         </div>
       ))}
       {props.lastmaiBlocks.map((lastmaiBlock, id) => (
@@ -96,6 +90,7 @@ const Page = (props) => (
           <SubTitle>{lastmaiBlock.title}</SubTitle>
           <TextBlock>
             <div
+              className={lastmaiBlock.class}
               dangerouslySetInnerHTML={{
                 __html: lastmaiBlock.bioText,
               }}
@@ -107,10 +102,8 @@ const Page = (props) => (
         <div className='here' />
       </TextSeparator>
       <SubTitle>
-        {' '}
-        VER
-        <Link href='/menu-mai'>
-          <a>CARTA MA'I</a>
+        <Link href='/reserva'>
+          <a>RESERVA AQUÍ</a>
         </Link>
       </SubTitle>
       <TextSeparator />
@@ -119,19 +112,19 @@ const Page = (props) => (
 );
 
 export async function getStaticProps() {
-  const res = await fetch(`https://aurt-data.vercel.app/data/mai.json`);
+  const res = await fetch(`https://aurt-data.vercel.app/data/pack.json`);
   const post = await res.json();
-  const noOKDescription = post.maiBlocks[0].bioText;
+  const noOKDescription = post.packBlocks[0].bioText;
   const description = noOKDescription
     .replace(/<strong>/g, '')
     .replace(/<\/strong>/g, '')
     .replace(/<br\/>/g, '');
 
-  const notLastmaiBlocks = post.maiBlocks.slice(0, -1);
+  const notLastpackBlocks = post.packBlocks.slice(0, -1);
 
-  const lastmaiBlocks = post.maiBlocks.slice(-1);
+  const lastmaiBlocks = post.packBlocks.slice(-1);
   return {
-    props: { post, notLastmaiBlocks, lastmaiBlocks, description },
+    props: { post, notLastpackBlocks, lastmaiBlocks, description },
   };
 }
 

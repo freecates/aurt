@@ -11,6 +11,9 @@ const TextBlock = styled.div`
   .center {
     text-align: center !important;
   }
+  .no-spacing {
+    letter-spacing: 0;
+  }
   .uppercase {
     text-transform: uppercase;
   }
