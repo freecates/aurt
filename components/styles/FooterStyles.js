@@ -24,6 +24,9 @@ const FooterStyles = styled.div`
     width: 32px;
     height: 32px;
   }
+  .wrapper-pack {
+    margin-bottom: 3rem;
+  }
 `
 
 export default FooterStyles
