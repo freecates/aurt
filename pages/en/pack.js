@@ -103,7 +103,7 @@ const Page = (props) => (
         <div className='here' />
       </TextSeparator>
       <SubTitle>
-        <Link href='/en/reserva'>
+        <Link href='/en/reservation'>
           <a>RESERVATION HERE</a>
         </Link>
       </SubTitle>
