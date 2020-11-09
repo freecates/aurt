@@ -1,14 +1,22 @@
-import FooterStyles from './styles/FooterStyles'
-import SingleModal from './SingleModal'
+import FooterStyles from './styles/FooterStyles';
+import SingleModal from './SingleModal';
+import Packs from '../components/Packs';
 
-const FooterFourth = props => (
-  <FooterStyles ruta={props.ruta} className="fourth">
+const FooterFourth = (props) => (
+  <FooterStyles ruta={props.ruta} className='fourth'>
     <div>
       <section>
-        <img loading='lazy'
-          src="/static/newsletter.svg"
-          className="sn"
-          alt="Logo Newsletter"
+        <div className={'wrapper-pack'}>
+          {props.ruta.includes('/ca') && <Packs route={'/ca'} />}
+          {props.ruta.includes('/en') && <Packs route={'/en'} />}
+          {props.ruta.indexOf('/ca') == -1 &&
+            props.ruta.indexOf('/en') == -1 && <Packs route={''} />}
+        </div>
+        <img
+          loading='lazy'
+          src='/static/newsletter.svg'
+          className='sn'
+          alt='Logo Newsletter'
           width='32'
           height='32'
         />
@@ -27,11 +35,11 @@ const FooterFourth = props => (
                       id: '0101',
                       name: 'Subscripció Newsletter',
                       file: 'ca/mailchimp.html',
-                      class: 'left'
-                    }
+                      class: 'left',
+                    },
                   ],
-                  class: 'left'
-                }
+                  class: 'left',
+                },
               ]}
             />{' '}
             PER MANTENIR-TE
@@ -53,11 +61,11 @@ const FooterFourth = props => (
                       id: '0101',
                       name: 'Newsletter subscription',
                       file: 'en/mailchimp.html',
-                      class: 'left'
-                    }
+                      class: 'left',
+                    },
                   ],
-                  class: 'left'
-                }
+                  class: 'left',
+                },
               ]}
             />
             TO KEEP YOU
@@ -66,35 +74,34 @@ const FooterFourth = props => (
           </React.Fragment>
         )}
 
-        {props.ruta.indexOf('/ca') == -1 &&
-          (props.ruta.indexOf('/en') == -1 && (
-            <React.Fragment>
-              SUBSCRÍBETE A LA
-              <SingleModal
-                singleModalItems={[
-                  {
-                    id: '01',
-                    name: 'NEWSLETTER',
-                    items: [
-                      {
-                        name: 'Alta Newsletter',
-                        id: '0101',
-                        file: 'mailchimp.html',
-                        class: 'left'
-                      }
-                    ],
-                    class: 'left'
-                  }
-                ]}
-              />
-              PARA MANTENERTE
-              <br />
-              INFORMADO
-            </React.Fragment>
-          ))}
+        {props.ruta.indexOf('/ca') == -1 && props.ruta.indexOf('/en') == -1 && (
+          <React.Fragment>
+            SUBSCRÍBETE A LA
+            <SingleModal
+              singleModalItems={[
+                {
+                  id: '01',
+                  name: 'NEWSLETTER',
+                  items: [
+                    {
+                      name: 'Alta Newsletter',
+                      id: '0101',
+                      file: 'mailchimp.html',
+                      class: 'left',
+                    },
+                  ],
+                  class: 'left',
+                },
+              ]}
+            />
+            PARA MANTENERTE
+            <br />
+            INFORMADO
+          </React.Fragment>
+        )}
       </section>
     </div>
   </FooterStyles>
-)
+);
 
-export default FooterFourth
+export default FooterFourth;
