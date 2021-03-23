@@ -1,15 +1,18 @@
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../lib/apolloClient';
 import Page from '../components/Page';
+import FacebookPixel from '../components/FacebookPixel';
 
 const App = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Page ruta={pageProps.pathname}>
-        <Component {...pageProps} />
-      </Page>
+      <FacebookPixel>
+        <Page ruta={pageProps.pathname}>
+          <Component {...pageProps} />
+        </Page>
+      </FacebookPixel>
     </ApolloProvider>
   );
 };
