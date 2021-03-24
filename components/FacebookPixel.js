@@ -10,6 +10,16 @@ const FacebookPixel = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
+    
+    if (router.pathname === '/reserva') {
+      fbq.event('ViewContent');
+    }
+    if (router.pathname === '/menu-degustacion') {
+      fbq.event('ViewContent');
+    }
+  }, [router]);
+
+  useEffect(() => {
     // This pageview only trigger first time (it is important for Pixel to have real information)
     fbq.pageview();
 
