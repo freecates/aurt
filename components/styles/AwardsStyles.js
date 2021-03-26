@@ -29,7 +29,7 @@ const AwardsStyles = styled.span`
       }
       &.artur,
       &.others {
-        height: 100px;
+        height: 80px;
         margin-right: 0;
       }
     }

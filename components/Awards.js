@@ -10,8 +10,8 @@ const Awards = (props) => {
         <img className={'artur'} loading='lazy'
           src='/static/awards-artur-aurt.svg'
           alt='artur aürt awards'
-          height='100'
-          width='482'
+          height='80'
+          width='386'
         />
       ) : (
         <img className={'others'} loading='lazy' src='/static/awards-aurt.svg' alt='aürt awards' height='100' width='172' />
