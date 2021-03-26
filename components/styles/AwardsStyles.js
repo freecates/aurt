@@ -24,7 +24,7 @@ const AwardsStyles = styled.span`
     margin-top: 4rem;
     img {
       &.home {
-        height: 130px;
+        height: 104px;
         margin-right: 0;
       }
       &.artur,

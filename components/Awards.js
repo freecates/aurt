@@ -5,13 +5,13 @@ const Awards = (props) => {
   return (
     <AwardsStyles>
       {ruta == '/' || ruta == '/ca' || ruta == '/en' ? (
-        <img className={'home'} loading='lazy' src='/static/awards-home.svg' alt='aürt awards' height='130' width='362' />
+        <img className={'home'} loading='lazy' src='/static/awards-home.svg' alt='aürt awards' height='104' width='500' />
       ) : ruta == '/artur' || ruta == '/ca/artur' || ruta == '/en/artur' ? (
         <img className={'artur'} loading='lazy'
           src='/static/awards-artur-aurt.svg'
           alt='artur aürt awards'
           height='100'
-          width='279'
+          width='482'
         />
       ) : (
         <img className={'others'} loading='lazy' src='/static/awards-aurt.svg' alt='aürt awards' height='100' width='172' />
