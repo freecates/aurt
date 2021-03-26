@@ -3,10 +3,10 @@ import Link from 'next/link';
 const Packs = ({ route }) => {
   const text =
     route === '/ca'
-      ? 'SOPAR & HABITACIÓ'
+      ? 'MENÚ & HABITACIÓ'
       : route === '/en'
-      ? 'DINNER & ROOM'
-      : 'CENA & HABITACIÓN';
+      ? 'MENU & ROOM'
+      : 'MENÚ & HABITACIÓN';
   const anchorText =
     route === '/ca'
       ? 'PACK DISPONIBLE'
