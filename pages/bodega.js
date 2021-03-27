@@ -114,9 +114,9 @@ const Page = (props) => (
       <SubTitle>
         {' '}
         VER
-        <Link href='/vinos' >
-          <a>CARTA DE VINOS</a>
-        </Link>
+        <a href='https://wine.aurtrestaurant.com/' target='_blank'>
+          CARTA DE VINOS
+        </a>
       </SubTitle>
     </ItemStyles>
   </InnerLayout>
