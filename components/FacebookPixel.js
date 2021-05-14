@@ -17,6 +17,9 @@ const FacebookPixel = ({ children }) => {
     if (router.pathname === '/menu-degustacion') {
       fbq.event('ViewContent');
     }
+    if (router.pathname === '/gracias-por-la-reserva' || router.pathname === '/ca/gracies-per-la-reserva' || router.pathname === '/en/thanks-for-your-reservation') {
+      fbq.event('Schedule');
+    }
   }, [router]);
 
   useEffect(() => {

@@ -9,7 +9,7 @@ const ThanksStyle = styled.div`
   margin: 0 auto;
 `
 
-const Thanks = props => (
+const Thanks = () => (
   <InnerLayout mainlayout>
     <ThanksStyle>
       <TextSeparator>

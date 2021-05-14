@@ -1,6 +1,6 @@
 import Thanks from '../components/Thanks'
 
-const Gracias = props => (
+const Gracias = () => (
   <div>
     <Thanks />
   </div>
