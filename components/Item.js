@@ -62,10 +62,10 @@ export default class Item extends React.Component {
         {item.node.featuredImage && (
           <img loading='lazy'
             style={{ padding: '3rem 0 0' }}
-            src={item.node.featuredImage.mediaDetails.sizes[2].sourceUrl}
+            src={item.node.featuredImage.node.mediaDetails.sizes[2].sourceUrl}
             alt={item.node.title}
-            width={item.node.featuredImage.mediaDetails.sizes[2].width}
-            height={item.node.featuredImage.mediaDetails.sizes[2].height}
+            width={item.node.featuredImage.node.mediaDetails.sizes[2].width}
+            height={item.node.featuredImage.node.mediaDetails.sizes[2].height}
           />
         )}
         <TextBlock>

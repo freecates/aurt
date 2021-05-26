@@ -26,18 +26,20 @@ export const ALL_POSTS_QUERY = gql`
           title
           slug
           featuredImage {
-            id
-            sourceUrl
-            mediaDetails {
-              width
-              sizes {
-                height
-                sourceUrl
+            node {
+              id
+              sourceUrl
+              mediaDetails {
                 width
+                sizes {
+                  height
+                  sourceUrl
+                  width
+                }
               }
             }
           }
-          content(format: RAW)
+          content
         }
       }
     }

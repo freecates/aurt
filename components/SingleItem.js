@@ -45,17 +45,20 @@ const SingleItemStyles = styled.div`
   }
 `
 
-export const SINGLE_POST_QUERY = gql`
-  query SINGLE_POST_QUERY($id: ID!) {
-    post(id: $id) {
-      id
-      title
-      date
-      author {
+export const SINGLE_POST_QUERY = gql`  
+query SINGLE_POST_QUERY($id: ID!) {
+  post(id: $id) {
+    id
+    title
+    date
+    author {
+      node {
         name
       }
-      slug
-      featuredImage {
+    }
+    slug
+    featuredImage {
+      node {
         id
         sourceUrl
         mediaDetails {
@@ -66,10 +69,11 @@ export const SINGLE_POST_QUERY = gql`
           }
         }
       }
-      excerpt
-      content(format: RAW)
     }
+    excerpt
+    content
   }
+}
 `
 
 const defaultProps = {}
@@ -107,18 +111,18 @@ export default class SingleItem extends React.Component {
                     <React.Fragment>
                       <meta
                         property="og:image"
-                        content={`${post.featuredImage.sourceUrl}`}
+                        content={`${post.featuredImage.node.sourceUrl}`}
                       />
                       <meta
                         property="og:image:width"
                         content={`${
-                          post.featuredImage.mediaDetails.sizes[3].width
+                          post.featuredImage.node.mediaDetails.sizes[3].width
                         }`}
                       />
                       <meta
                         property="og:image:height"
                         content={`${
-                          post.featuredImage.mediaDetails.sizes[3].height
+                          post.featuredImage.node.mediaDetails.sizes[3].height
                         }`}
                       />
                     </React.Fragment>
@@ -164,7 +168,7 @@ export default class SingleItem extends React.Component {
                         }
                         }, 
                         "description": "${excerpt}",
-                        "image": "${post.featuredImage.sourceUrl}",
+                        "image": "${post.featuredImage.node.sourceUrl}",
                         "datePublished": "${post.date}",
                         "headline": "${post.title}"
                       }`
@@ -183,7 +187,7 @@ export default class SingleItem extends React.Component {
                   <div className="medium here" />
                 </TextSeparator>
                 {post.featuredImage && (
-                  <img loading='lazy' src={post.featuredImage.sourceUrl} alt={post.title} />
+                  <img loading='lazy' src={post.featuredImage.node.sourceUrl} alt={post.title} />
                 )}
                 <div className="details">
                   <h2 style={{ marginBottom: '0' }}>
@@ -194,7 +198,7 @@ export default class SingleItem extends React.Component {
                     />{' '}
                   </h2>
                   <p style={{ marginTop: '0' }}>
-                    <small>by {post.author.name}</small>
+                    <small>by {post.author.node.name}</small>
                   </p>
                   <div
                     dangerouslySetInnerHTML={{
