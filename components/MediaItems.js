@@ -87,7 +87,7 @@ export const MEDIA_ITEMS_QUERY = gql`
           altText
           description
           mediaType
-          sourceUrl
+          mediaItemUrl
           mediaDetails {
             height
             width
@@ -176,7 +176,7 @@ export default class LaGaleria extends React.Component {
                                     {
                                       id: galeriaMedia.node.id,
                                       mediaType: galeriaMedia.node.mediaType,
-                                      srcOpen: galeriaMedia.node.sourceUrl,
+                                      srcOpen: galeriaMedia.node.mediaItemUrl,
                                       width: galeriaMedia.node.mediaDetails.sizes[2].width,
                                       height: galeriaMedia.node.mediaDetails.sizes[2].height,
                                       class: 'left',
@@ -194,13 +194,13 @@ export default class LaGaleria extends React.Component {
                               singleModalItems={[
                                 {
                                   id: galeriaMedia.node.id,
-                                  src: galeriaMedia.node.sourceUrl,
+                                  src: galeriaMedia.node.mediaItemUrl,
                                   mediaType: galeriaMedia.node.mediaType,
                                   items: [
                                     {
                                       id: galeriaMedia.node.id,
                                       mediaType: galeriaMedia.node.mediaType,
-                                      srcOpen: galeriaMedia.node.sourceUrl,
+                                      srcOpen: galeriaMedia.node.mediaItemUrl,
                                       class: 'left',
                                     },
                                   ],
