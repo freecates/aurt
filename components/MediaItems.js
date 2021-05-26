@@ -118,15 +118,13 @@ export default class LaGaleria extends React.Component {
             if (loading) return <p>Loading...</p>;
             if (!data.mediaItems) return <p>No Media found</p>;
             const medias = data.mediaItems.edges;
-            // console.log('Llargada Galeria')
-            // console.log(medias.length)
+            //console.log('medias ', medias.length)
             const galeriaMedias = [
               ...new Set(
                 medias.filter(media => media.node.link.includes('/galeria'))
               ),
             ];
-            // console.log('Hola Galeria')
-            // console.log(galeriaMedias)
+            //console.log('galeriaMedias ', galeriaMedias);
             return (
               <SingleItemStyles>
                 <TextBlock>
