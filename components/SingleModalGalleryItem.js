@@ -94,14 +94,14 @@ class SingleModalGalleryItem extends React.Component {
               {singleModalItem.items ? (
                 <React.Fragment>
                   {singleModalItem.mediaType == 'file' && (
-                    <figure>
-                      <video controls>
-                        <source
-                          src={singleModalItem.src + '#t=1'}
-                          type="video/mp4"
-                          id={singleModalItem.id}
-                        />
-                      </video>
+                  <figure onClick={this.show.bind(this)}>
+                      <img loading='lazy'
+                        src={'/static/play.svg'}
+                        width={'150'}
+                        height={'150'}
+                        style={{ cursor: 'pointer' }}
+                        id={singleModalItem.id}
+                      />
                     </figure>
                   )}
                   {singleModalItem.mediaType == 'image' && (
@@ -135,7 +135,7 @@ class SingleModalGalleryItem extends React.Component {
                             )}{' '}
                             {item.mediaType == 'file' && (
                               <video controls>
-                                <source src={item.srcOpen} type="video/mp4" />
+                                <source src={item.srcOpen + '#t=1'} type="video/mp4" />
                               </video>
                             )}
                           </AlignLeftMenutitle>
