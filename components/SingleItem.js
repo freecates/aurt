@@ -92,7 +92,7 @@ export default class SingleItem extends React.Component {
             const excerpt = post.excerpt
               .replace(/<p>/g, '')
               .replace(/<\/p>/g, '')
-            const itemDate = post.date.replace(/-/g, '/')
+            const itemDate = post.date
             return (
               <SingleItemStyles>
                 <Head>

@@ -16,9 +16,7 @@ export default class Item extends React.Component {
     const ruta = this.props.ruta;
     const { item } = this.props;
     const textBlock = item.node.content.substring(0, 280) + '...';
-    const itemDate = item.node.date.replace(/-/g, '/');
-    console.log(itemDate);
-    console.log(new Date(item.node.date));
+    const itemDate = item.node.date;
     return (
       <ItemStyles>
         <TextBlock>
