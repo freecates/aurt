@@ -41,7 +41,8 @@ const Page = (props) => (
           <SubTitle>{notLasthorariosBlock.title}</SubTitle>
           {notLasthorariosBlock.logo && (
             <SubTitle>
-              <img loading='lazy'
+              <img
+                loading='lazy'
                 src={notLasthorariosBlock.logo}
                 style={{ width: '58px', height: '19px' }}
               />
@@ -97,6 +98,7 @@ export async function getStaticProps() {
   const lasthorariosBlocks = post.horariosBlocks.slice(-1);
   return {
     props: { post, notLasthorariosBlocks, lasthorariosBlocks, description },
+    revalidate: 60,
   };
 }
 
