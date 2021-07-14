@@ -6,12 +6,6 @@ const FooterFourth = (props) => (
   <FooterStyles ruta={props.ruta} className='fourth'>
     <div>
       <section>
-        <div className={'wrapper-pack'}>
-          {props.ruta.includes('/ca') && <Packs route={'/ca'} />}
-          {props.ruta.includes('/en') && <Packs route={'/en'} />}
-          {props.ruta.indexOf('/ca') == -1 &&
-            props.ruta.indexOf('/en') == -1 && <Packs route={''} />}
-        </div>
         <img
           loading='lazy'
           src='/static/newsletter.svg'
