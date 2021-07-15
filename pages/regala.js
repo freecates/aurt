@@ -102,8 +102,8 @@ const RegalaES = (props) => (
         <div className='here' />
       </TextSeparator>
       <SubTitle>
-        <Link href='/reserva'>
-          <a>RESERVA AQUÍ</a>
+        <Link href='/compra'>
+          <a>COMPRA AQUÍ</a>
         </Link>
       </SubTitle>
       <TextSeparator />

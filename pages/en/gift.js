@@ -103,8 +103,8 @@ const GiftEN = (props) => (
         <div className='here' />
       </TextSeparator>
       <SubTitle>
-        <Link href='/en/reservation'>
-          <a>RESERVATION HERE</a>
+        <Link href='/en/buy'>
+          <a>BUY HERE</a>
         </Link>
       </SubTitle>
       <TextSeparator />
