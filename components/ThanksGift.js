@@ -19,25 +19,25 @@ const Title = styled.h1`
   color: #000000;
 `;
 
-const ThanksReservation = () => (
+const ThanksGift = () => (
   <InnerLayout layout>
     <ThanksStyle>
       <>
-        <Title>Thanks For Your Reservation!</Title>
+        <Title>Thanks For Buying a Gift Voucher!</Title>
         <p>We hope to see you soon</p>
       </>
 
       <>
-        <Title>¡Gracias Por Tu Reserva!</Title>
+        <Title>¡Gracias Por Comprar una Targeta Regalo!</Title>
         <p>Esperamos verte pronto</p>
       </>
 
       <>
-        <Title>Gràcies Per la Teva Reserva!</Title>
+        <Title>Gràcies Per Comprar una Targeta Regal!</Title>
         <p>Esperem veure't aviat</p>
       </>
     </ThanksStyle>
   </InnerLayout>
 );
 
-export default ThanksReservation;
+export default ThanksGift;

@@ -1,8 +1,8 @@
 import ThanksReservation from '../components/ThanksReservation';
 
-const GraciasReserva = (props) => (
+const GraciasReserva = () => (
   <div>
-    <ThanksReservation ruta={props.pathname} />
+    <ThanksReservation />
   </div>
 );
 

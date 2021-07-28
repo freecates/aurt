@@ -21,7 +21,8 @@ class MenuReservation extends React.Component {
         ruta.includes('mai') ||
         ruta.includes('menu-mai') ||
         ruta.includes('buy') ||
-        ruta.includes('compra') ? (
+        ruta.includes('compra') ||
+        ruta.includes('gracias') ? (
           ''
         ) : (
           <NavStyles className="starred">
