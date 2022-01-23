@@ -1,5 +1,5 @@
 {
-  "name": "aurt-frontend-hooks",
+  "name": "aurt-restaurant",
   "version": "1.1.0",
   "description": "AURT Restaurant",
   "main": "index.js",
@@ -8,8 +8,6 @@
     "now-build": "next build",
     "start": "next start",
     "export": "npm run now-build && next export",
-    "test": "NODE_ENV=test jest --watchAll",
-    "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
   },
   "author": "",
@@ -22,23 +20,21 @@
     "compression": "^1.7.3",
     "date-fns": "^2.0.0-alpha.7",
     "downshift": "^2.2.3",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.9.2",
     "isomorphic-unfetch": "^3.0.0",
     "lodash.debounce": "^4.0.8",
     "markdown-to-jsx": "^6.9.0",
-    "next": "^10.2.0",
+    "next": "^10.0.0",
     "next-offline": "^5.0.3",
     "next-router-events": "^2.1.0",
     "next-with-apollo": "^3.1.3",
     "nextjs-sitemap-generator": "^0.0.4",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
-    "react": "16.13.1",
+    "react": "^16.13.1",
     "react-adopt": "^0.6.0",
-    "react-dom": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-ga": "^2.5.7",
     "react-iframe": "1.3.3",
     "react-instafeed": "^1.0.0",
@@ -59,21 +55,7 @@
     "casual": "^1.5.19",
     "enzyme-to-json": "^3.3.4",
     "graphql-tools": "^4.0.0",
-    "jest": "^23.6.0",
-    "jest-transform-graphql": "^2.1.0",
     "raw-loader": "^1.0.0"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
-    "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
-      "<rootDir>/node_modules/"
-    ],
-    "transform": {
-      "\\.(gql|graphql)$": "jest-transform-graphql",
-      ".*": "babel-jest",
-      "^.+\\.js?$": "babel-jest"
-    }
   },
   "//": "This is our babel config, I prefer this over a .babelrc file",
   "babel": {
