@@ -1,17 +1,28 @@
-import MenuPdf from '../../components/MenuPdf'
+import api from '@libs/api.js';
+import TastingMenu from '@components/TastingMenu';
 
-const TastingMenu = props => (
-  <div>
-    <MenuPdf ruta={props.pathname} file={ props.file } />
-  </div>
-)
+const MenuDegustacio = (props) => {
+  const ruta = props.pathname;
+  const { contingut_del_menu: data } = props.singleTastingData[0].acf;
+  return (
+    <>
+      <TastingMenu ruta={ruta} data={data} />
+    </>
+  );
+};
 
-export async function getStaticProps() {
-  const file = 'https://wp.aurtrestaurant.com/wp-content/uploads/menus-aurt/menu-aurt-en.pdf';
+export const getStaticProps = async () => {
+  const id = 560;
+  const [singleTastingMenu] = await Promise.all([
+    api.singleTastingMenu.getData(id),
+  ]);
 
   return {
-    props: { file }, // will be passed to the page component as props
+    props: {
+      singleTastingData: [singleTastingMenu],
+    },
+    revalidate: 1,
   };
-}
+};
 
-export default TastingMenu
+export default MenuDegustacio;

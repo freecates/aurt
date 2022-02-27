@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components'
 import InnerLayout from './InnerLayout'
 import TextBlock from './styles/TextBlock'

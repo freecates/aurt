@@ -20,7 +20,7 @@ const FacebookPixel = ({ children }) => {
     if (router.pathname === '/gracias-reservas' || router.pathname === '/gracias-regala') {
       fbq.event('Schedule');
     }
-  }, [router]);
+  }, []);
 
   useEffect(() => {
     // This pageview only trigger first time (it is important for Pixel to have real information)

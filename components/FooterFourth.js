@@ -1,3 +1,4 @@
+import React from 'react';
 import FooterStyles from './styles/FooterStyles';
 import SingleModal from './SingleModal';
 import Packs from '../components/Packs';

@@ -1,3 +1,4 @@
+import React from 'react';
 import MenuItemModal from './MenuItemModal'
 import MenuLang from './MenuLang'
 import MenuReservation from './MenuReservation'

@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 import Link from 'next/link';
 import InnerLayout from '../../components/InnerLayout';

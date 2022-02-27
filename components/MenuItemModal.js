@@ -1,4 +1,5 @@
-import routerEvents from 'next-router-events';
+import React from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Rodal from 'rodal';
 import styled from 'styled-components';
@@ -55,172 +56,169 @@ const customStyles = {
   padding: '2em 0',
 };
 const contentStyle = {
-  background: 'rgba(255,255,255,0',
+  background: 'rgba(255,255,255,0)',
   border: 'none',
-  position: 'absolute',
-  left: '25%',
-  top: '10%',
+  margin: '25% auto',
 };
 
 const Center = styled.div`
   text-align: center;
 `;
 
-class MenuItemModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: 0,
-      menuModalItems: null,
-    };
-    this.hide = this.hide.bind(this);
-    routerEvents.on('routeChangeStart', this.hide);
-  }
+const MenuItemModal = (props) => {
+  const router = useRouter();
+  const [visible, setVisible] = React.useState(0);
 
-  show(evt) {
-    this.setState({ visible: evt.target.getAttribute('id') });
-  }
+  const noOKmenuModalItems = props.menuModalItems;
+  const menuModalItems = [...noOKmenuModalItems];
 
-  hide() {
-    this.setState({ visible: false });
-  }
+  const show = (evt) => {
+    setVisible(evt.target.getAttribute('id'));
+  };
 
-  render() {
-    const noOKmenuModalItems = this.props.menuModalItems;
-    const menuModalItems = [...noOKmenuModalItems];
-    return (
-      <>
-        <div className={'left'}>
-          <NavStyles>
-            {menuModalItems
-              .filter((menuModalItem) => menuModalItem.class == 'left')
-              .map((menuModalItem) => (
-                <RodalStyles key={menuModalItem.id}>
-                  {menuModalItem.items ? (
-                    <React.Fragment>
-                      <h4>
+  const hide = () => {
+    setVisible(false);
+  };
+
+  React.useEffect(() => {
+    router.events.on('routeChangeStart', hide);
+    return () => {
+      router.events.off('routeChangeStart', hide)
+    }
+  }, [router]);
+
+  return (
+    <>
+      <div className={'left'}>
+        <NavStyles>
+          {menuModalItems
+            .filter((menuModalItem) => menuModalItem.class == 'left')
+            .map((menuModalItem) => (
+              <RodalStyles key={menuModalItem.id}>
+                {menuModalItem.items ? (
+                  <React.Fragment>
+                    <h4>
+                      <a
+                        className={`item`}
+                        onClick={(evt) => show(evt)}
+                        title={menuModalItem.name}
+                        id={menuModalItem.id}>
+                        {menuModalItem.name}
+                      </a>
+                    </h4>
+                    <RodalItem>
+                      <Rodal
+                        visible={visible == menuModalItem.id}
+                        onClose={() => hide()}
+                        animation='slideDown'
+                        duration={1000}
+                        className={`rodal-item`}
+                        showMask={false}
+                        customStyles={customStyles}
+                        closeOnEsc={false}
+                        id={menuModalItem.id + ''}>
+                        <Center>
+                          <TextSeparator>
+                            <div className={`here`} />
+                          </TextSeparator>
+                          <MenuTitle>
+                            <h2 className={`black`}>{menuModalItem.name}</h2>
+                          </MenuTitle>
+                          {menuModalItem.items.map((item, id) => (
+                            <MenuTitle key={id}>
+                              <Link href={item.path}>
+                                <h2 title={item.name}>{item.name}</h2>
+                              </Link>
+                            </MenuTitle>
+                          ))}
+                        </Center>
+                      </Rodal>
+                    </RodalItem>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <h4>
+                      <Link href={menuModalItem.path}>
                         <a
                           className={`item`}
-                          onClick={this.show.bind(this)}
                           title={menuModalItem.name}
                           id={menuModalItem.id}>
                           {menuModalItem.name}
                         </a>
-                      </h4>
-                      <RodalItem>
-                        <Rodal
-                          visible={this.state.visible == menuModalItem.id}
-                          onClose={this.hide.bind(this)}
-                          animation='slideDown'
-                          duration={1000}
-                          className={`rodal-item`}
-                          showMask={false}
-                          customStyles={customStyles}
-                          closeOnEsc={false}
-                          id={menuModalItem.id}>
-                          <Center>
-                            <TextSeparator>
-                              <div className={`here`} />
-                            </TextSeparator>
-                            <MenuTitle>
-                              <h2 className={`black`}>{menuModalItem.name}</h2>
+                      </Link>
+                    </h4>
+                  </React.Fragment>
+                )}
+              </RodalStyles>
+            ))}
+        </NavStyles>
+      </div>
+      <div className={`right`}>
+        <NavStyles>
+          {menuModalItems
+            .filter((menuModalItem) => menuModalItem.class == 'right')
+            .map((menuModalItem) => (
+              <RodalStyles key={menuModalItem.id}>
+                {menuModalItem.items ? (
+                  <React.Fragment>
+                    <h4>
+                      <a
+                        className={`item`}
+                        onClick={(evt) => show(evt)}
+                        title={menuModalItem.name}
+                        id={menuModalItem.id}>
+                        {menuModalItem.name}
+                      </a>
+                    </h4>
+                    <RodalItem>
+                      <Rodal
+                        visible={visible == menuModalItem.id}
+                        onClose={() => hide()}
+                        animation='slideDown'
+                        duration={1000}
+                        className={`rodal-item`}
+                        showMask={false}
+                        customStyles={customStyles}
+                        closeOnEsc={false}
+                        id={menuModalItem.id + ''}>
+                        <Center>
+                          <TextSeparator>
+                            <div className={`here`} />
+                          </TextSeparator>
+                          <MenuTitle>
+                            <h2 className={`black`}>{menuModalItem.name}</h2>
+                          </MenuTitle>
+                          {menuModalItem.items.map((item, id) => (
+                            <MenuTitle key={id}>
+                              <Link href={item.path}>
+                                <h2 title={item.name}>{item.name}</h2>
+                              </Link>
                             </MenuTitle>
-                            {menuModalItem.items.map((item, id) => (
-                              <MenuTitle key={id}>
-                                <Link href={item.path}>
-                                  <h2 title={item.name}>{item.name}</h2>
-                                </Link>
-                              </MenuTitle>
-                            ))}
-                          </Center>
-                        </Rodal>
-                      </RodalItem>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <h4>
-                        <Link href={menuModalItem.path}>
-                          <a
-                            className={`item`}
-                            title={menuModalItem.name}
-                            id={menuModalItem.id}>
-                            {menuModalItem.name}
-                          </a>
-                        </Link>
-                      </h4>
-                    </React.Fragment>
-                  )}
-                </RodalStyles>
-              ))}
-          </NavStyles>
-        </div>
-        <div className={`right`}>
-          <NavStyles>
-            {menuModalItems
-              .filter((menuModalItem) => menuModalItem.class == 'right')
-              .map((menuModalItem) => (
-                <RodalStyles key={menuModalItem.id}>
-                  {menuModalItem.items ? (
-                    <React.Fragment>
-                      <h4>
+                          ))}
+                        </Center>
+                      </Rodal>
+                    </RodalItem>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <h4>
+                      <Link href={menuModalItem.path}>
                         <a
                           className={`item`}
-                          onClick={this.show.bind(this)}
                           title={menuModalItem.name}
                           id={menuModalItem.id}>
                           {menuModalItem.name}
                         </a>
-                      </h4>
-                      <RodalItem>
-                        <Rodal
-                          visible={this.state.visible == menuModalItem.id}
-                          onClose={this.hide.bind(this)}
-                          animation='slideDown'
-                          duration={1000}
-                          className={`rodal-item`}
-                          showMask={false}
-                          customStyles={customStyles}
-                          closeOnEsc={false}
-                          id={menuModalItem.id}>
-                          <Center>
-                            <TextSeparator>
-                              <div className={`here`} />
-                            </TextSeparator>
-                            <MenuTitle>
-                              <h2 className={`black`}>{menuModalItem.name}</h2>
-                            </MenuTitle>
-                            {menuModalItem.items.map((item, id) => (
-                              <MenuTitle key={id}>
-                                <Link href={item.path}>
-                                  <h2 title={item.name}>{item.name}</h2>
-                                </Link>
-                              </MenuTitle>
-                            ))}
-                          </Center>
-                        </Rodal>
-                      </RodalItem>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>
-                      <h4>
-                        <Link href={menuModalItem.path}>
-                          <a
-                            className={`item`}
-                            title={menuModalItem.name}
-                            id={menuModalItem.id}>
-                            {menuModalItem.name}
-                          </a>
-                        </Link>
-                      </h4>
-                    </React.Fragment>
-                  )}
-                </RodalStyles>
-              ))}
-          </NavStyles>
-        </div>
-      </>
-    );
-  }
-}
+                      </Link>
+                    </h4>
+                  </React.Fragment>
+                )}
+              </RodalStyles>
+            ))}
+        </NavStyles>
+      </div>
+    </>
+  );
+};
 
 export default MenuItemModal;

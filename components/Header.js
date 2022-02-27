@@ -1,19 +1,11 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import routerEvents from 'next-router-events';
+import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import Nav from './Nav';
 import Logo from './Logo';
-
-routerEvents.on('routeChangeStart', () => {
-  NProgress.start();
-});
-routerEvents.on('routeChangeComplete', () => {
-  NProgress.done();
-});
-routerEvents.on('routeChangeError', () => {
-  NProgress.done();
-});
+import React from 'react';
 
 const LogoSection = styled.h1`
   grid-column: 3;
@@ -160,6 +152,20 @@ const StyleHeader = styled.header`
 `;
 
 const Header = (props) => {
+  const router = useRouter();
+  
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => {
+      NProgress.start();
+    });
+    router.events.on('routeChangeComplete', () => {
+      NProgress.done();
+    });
+    router.events.on('routeChangeError', () => {
+      NProgress.done();
+    });
+  }, [])
+
   return (
     <StyleHeader>
       <div className='bar'>

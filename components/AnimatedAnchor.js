@@ -1,3 +1,4 @@
+import React from "react";
 class AnimatedAnchor extends React.Component {
   state = { fade: false }
 
