@@ -1,5 +1,4 @@
 import InnerLayout from '../../components/InnerLayout';
-import fetch from 'isomorphic-unfetch';
 import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
 import TextBlock from '../../components/styles/TextBlock';

@@ -1,3 +1,4 @@
+import React from "react";
 import Link from 'next/link'
 import RodalStyles from './styles/RodalStyles'
 import NavStyles from './styles/NavStyles'

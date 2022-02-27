@@ -1,5 +1,5 @@
+import React from 'react';
 import styled from 'styled-components';
-import fetch from 'isomorphic-unfetch';
 import InnerLayout from '../../components/InnerLayout';
 import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
