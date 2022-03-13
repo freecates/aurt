@@ -135,6 +135,8 @@ const SingleItem = ({ data, ruta }) => {
             loading='lazy'
             src={featuredImage.source_url}
             alt={post.title.rendered}
+            width={featuredImage.media_details.width}
+            heigh={featuredImage.media_details.height}
           />
         )}
         <div className='details'>
