@@ -1,27 +1,25 @@
-import Items, {
-  ALL_POSTS_QUERY
-} from '../components/Items'
-import { initializeApollo } from '../lib/apolloClient'
+import api from '@libs/api.js';
+import Items from '../components/Items';
 
-const Blog = props => (
-  <div>
-    <Items ruta={props.pathname} />
-  </div>
-)
+const Blog = (props) => {
+  return (
+    <div>
+      <Items ruta={props.pathname} data={props.data} />
+    </div>
+  );
+};
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo()
-
-  await apolloClient.query({
-    query: ALL_POSTS_QUERY,
-  })
+export const getStaticProps = async () => {
+  const [posts] = await Promise.all([
+    api.posts.getData(),
+  ]);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
+      data: posts,
     },
     revalidate: 1,
-  }
-}
+  };
+};
 
-export default Blog
+export default Blog;
