@@ -13,8 +13,6 @@ const SingleItemStyles = styled.div`
   grid-template-columns: 1fr;
   img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
   }
   .details {
     margin: 3rem;
@@ -133,10 +131,10 @@ const SingleItem = ({ data, ruta }) => {
         {featuredImage && (
           <img
             loading='lazy'
-            src={featuredImage.source_url}
+            src={featuredImage.media_details.sizes.large.source_url}
             alt={post.title.rendered}
-            width={featuredImage.media_details.width}
-            heigh={featuredImage.media_details.height}
+            width={featuredImage.media_details.sizes.large.width}
+            heigh={featuredImage.media_details.sizes.large.height}
           />
         )}
         <div className='details'>
