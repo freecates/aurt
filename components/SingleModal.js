@@ -108,11 +108,11 @@ const SingleModal = (props) => {
   const singleModalItems = [...noOKsingleModalItems];
 
   const show = (evt) => {
-    setVisible({ visible: evt.target.getAttribute('id') });
+    setVisible(evt.target.getAttribute('id'));
   };
 
   const hide = () => {
-    setVisible({ visible: false });
+    setVisible(false);
   };
 
   React.useEffect(() => {
@@ -132,7 +132,7 @@ const SingleModal = (props) => {
                 <strong>
                   <a
                     style={{ cursor: 'pointer' }}
-                    onClick={show.bind(this)}
+                    onClick={(evt) => show(evt)}
                     title={singleModalItem.name}
                     id={singleModalItem.id}
                     className='single-modal-item-name'>
@@ -142,7 +142,7 @@ const SingleModal = (props) => {
                 <RodalItem className={singleModalItem.class}>
                   <Rodal
                     visible={visible == singleModalItem.id}
-                    onClose={hide.bind(this)}
+                    onClose={() => hide()}
                     animation='zoom'
                     duration={1000}
                     className='rodal-item'
