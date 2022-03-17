@@ -26,22 +26,10 @@ const RodalItem = styled.div`
   }
 
   .rodal-close {
-    top: 16vh;
+    top: 1vh;
     position: fixed;
     cursor: pointer;
-    right: 16vw;
-    @media (max-aspect-ratio: 5/8) {
-      top: 26vh;
-      right: 8vw;
-    }
-    @media (max-aspect-ratio: 6/8) {
-      top: 26vh;
-      right: 8vw;
-    }
-    @media (max-aspect-ratio: 8/6) {
-      top: 26vh;
-      right: 8vw;
-    }
+    right: 1vw;
   }
   .rodal-content {
     max-width: 90rem;
