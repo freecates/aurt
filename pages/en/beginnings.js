@@ -67,17 +67,9 @@ const Page = props => (
       <TextSeparator>
         <div className="here" />
       </TextSeparator>
-      <Blockquote>
-        <h2>{props.post.blockQuoteSecond}</h2>
-      </Blockquote>
-      <TextBlock
-        dangerouslySetInnerHTML={{
-          __html: props.post.fifthTextBlock
-        }}
-      />
       <TextBlock>
         <div
-          className="with-margin"
+          className='center'
           dangerouslySetInnerHTML={{
             __html: props.post.sixthTextBlock
           }}
