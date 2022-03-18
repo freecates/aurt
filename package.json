@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next -p 3001",
     "build": "next build",
-    "start": "next start",
-    "export": "npm run now-build && next export"
+    "start": "next start"
   },
   "author": "",
   "license": "ISC",
@@ -24,7 +23,6 @@
     "lodash.debounce": "^4.0.8",
     "markdown-to-jsx": "^6.9.0",
     "next": "^12.0.0",
-    "next-offline": "^5.0.5",
     "nextjs-sitemap-generator": "^0.0.4",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
