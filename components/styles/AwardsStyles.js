@@ -7,7 +7,7 @@ const AwardsStyles = styled.span`
   align-self: stretch;
   margin-top: -2rem;
   img {
-    height: 50px;
+    height: 30px;
     width: auto;
     &.home {
       margin-top: 4rem;
@@ -24,12 +24,12 @@ const AwardsStyles = styled.span`
     margin-top: 4rem;
     img {
       &.home {
-        height: 104px;
+        height: 83.2px;
         margin-right: 0;
       }
       &.artur,
       &.others {
-        height: 80px;
+        height: 70px;
         margin-right: 0;
       }
     }

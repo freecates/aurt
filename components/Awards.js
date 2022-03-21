@@ -12,8 +12,8 @@ const Awards = (props) => {
           loading='lazy'
           src={`${wpAssetsUrl}/awards/awards-home.svg`}
           alt='aürt awards'
-          height='104'
-          width='500'
+          height='83'
+          width='400'
         />
       ) : ruta == '/artur' || ruta == '/ca/artur' || ruta == '/en/artur' ? (
         <img
@@ -21,8 +21,8 @@ const Awards = (props) => {
           loading='lazy'
           src={`${wpAssetsUrl}/awards/awards-artur-aurt.svg`}
           alt='artur aürt awards'
-          height='80'
-          width='386'
+          height='70'
+          width='345'
         />
       ) : (
         <img
@@ -30,8 +30,8 @@ const Awards = (props) => {
           loading='lazy'
           src={`${wpAssetsUrl}/awards/awards-aurt.svg`}
           alt='aürt awards'
-          height='100'
-          width='172'
+          height='90'
+          width='155'
         />
       )}
     </AwardsStyles>
