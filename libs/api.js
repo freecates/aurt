@@ -38,6 +38,15 @@ const api = {
             return data;
         },
     },
+    singleTeam: {
+        async getData(id) {
+            const response = await fetch(`${wpDataUrl}wp/v2/team/${id}?_embed`, {
+                headers: { 'Cache-Control': 'no-store, max-age=0' },
+            });
+            const data = await response.json();
+            return data;
+        },
+    },
     posts: {
         async getData() {
             const response = await fetch(`${wpDataUrl}wp/v2/posts?limit=100&_embed`, {
