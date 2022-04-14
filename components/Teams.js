@@ -19,7 +19,7 @@ const Teams = ({ data, intro, titol, ruta }) => {
   return (
     <InnerLayout mainlayout>
       <Head>
-        <titol>AÜRT Restaurant | {titol}</titol>
+        <title>AÜRT Restaurant | {titol}</title>
         <meta nom='description' content={description} />
         <link rel='canonical' href={`https://www.aurtrestaurant.com${ruta}`} />
         <link
