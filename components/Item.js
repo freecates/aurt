@@ -41,10 +41,10 @@ const Item = ({ item, ruta }) => {
         <img
           loading='lazy'
           style={{ padding: '3rem 0 0' }}
-          src={featuredImage.media_details.sizes.medium.source_url}
+          src={featuredImage.media_details.sizes.large.source_url}
           alt={item.title}
-          width={featuredImage.media_details.sizes.medium.width}
-          height={featuredImage.media_details.sizes.medium.height}
+          width={featuredImage.media_details.sizes.large.width}
+          height={featuredImage.media_details.sizes.large.height}
         />
       )}
       <TextBlock>
