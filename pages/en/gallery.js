@@ -1,36 +1,45 @@
 import Head from 'next/head';
-import InnerLayout from '../../components/InnerLayout';
-import MediaItems, { MEDIA_ITEMS_QUERY } from '../../components/MediaItems';
-import TextSeparator from '../../components/styles/TextSeparator';
-import Title from '../../components/styles/Title';
-import { initializeApollo } from '../../lib/apolloClient';
+import api from '@libs/api.js';
+import InnerLayout from '@components/InnerLayout';
+import GalleryComponnet from '@components/Gallery';
+import TextSeparator from '@components/styles/TextSeparator';
+import Title from '@components/styles/Title';
 
-const Gallery = (props) => (
+const Gallery = ({ data, pathname }) => (
   <InnerLayout mainlayout>
     <Head>
       <title>AURT | Gallery</title>
+      <link
+        rel='canonical'
+        href={`https://www.aurtrestaurant.com${pathname}`}
+      />
+      <link
+        rel='alternate'
+        hrefLang={'es'}
+        href={`https://www.aurtrestaurant.com${pathname.replace(
+          /\/ca\//g,
+          '/'
+        )}`}
+      />
     </Head>
-    <Title>GAllery</Title>
+    <Title>Gallery</Title>
     <TextSeparator>
       <div className='here' />
     </TextSeparator>
-    <MediaItems ruta={props.pathname} />
+    <GalleryComponnet data={data} />
   </InnerLayout>
 );
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: MEDIA_ITEMS_QUERY,
-  });
+export const getStaticProps = async () => {
+  const id = 668;
+  const [singleGallery] = await Promise.all([api.singleGallery.getData(id)]);
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
+      data: singleGallery.acf.galeria,
     },
     revalidate: 1,
   };
-}
+};
 
 export default Gallery;
