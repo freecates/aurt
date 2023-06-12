@@ -107,16 +107,6 @@ const Page = (props) => (
           </TextBlock>
         </div>
       ))}
-      <TextSeparator>
-        <div className='here' />
-      </TextSeparator>
-      <SubTitle>
-        {' '}
-        VEURE
-        <a href='https://wine.aurtrestaurant.com/' target='_blank'>
-          CARTA DE VINS
-        </a>
-      </SubTitle>
     </ItemStyles>
   </InnerLayout>
 );
