@@ -109,7 +109,7 @@ export async function getStaticProps() {
   const lastaurtBlocks = post.aurtBlocks.slice(-1);
 
   return {
-    props: { post, notLastaurtBlocks, lastaurtBlocks, description }, // will be passed to the page component as props
+    props: { post, notLastaurtBlocks, lastaurtBlocks, description },
   };
 }
 
