@@ -56,6 +56,15 @@ const api = {
             return data;
         },
     },
+    singleFromCMS: {
+        async getData(id, type) {
+            const response = await fetch(`${wpDataUrl}wp/v2/${type}/${id}?_embed`, {
+                headers: { 'Cache-Control': 'no-store, max-age=0' },
+            });
+            const data = await response.json();
+            return data;
+        },
+    },
     posts: {
         async getData() {
             const response = await fetch(`${wpDataUrl}wp/v2/posts?limit=100&_embed`, {
