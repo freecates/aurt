@@ -57,7 +57,7 @@ const Aurts = ({ data, logo, ruta }) => {
         ))}
         {lasthorariosBlocks.map((d, id) => (
           <div key={id}>
-            <SubTitle>{d.title}</SubTitle>
+            <SubTitle>{d.concepte}</SubTitle>
             <TextBlock>
               <div
                 dangerouslySetInnerHTML={{
