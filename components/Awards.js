@@ -28,10 +28,10 @@ const Awards = (props) => {
         <img
           className={'others'}
           loading='lazy'
-          src={`${wpAssetsUrl}/awards/awards-aurt.svg`}
+          src={`${wpAssetsUrl}/awards/awards-aurt-2023.svg`}
           alt='aürt awards'
-          height='90'
-          width='155'
+          height='500'
+          width='263'
         />
       )}
     </AwardsStyles>
