@@ -40,7 +40,7 @@ const FooterFourth = (props) => (
             PER MANTENIR-TE
             <br />
             INFORMAT
-            <br/><br/>
+            <br /><br />
           </React.Fragment>
         )}
 
