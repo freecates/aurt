@@ -15,20 +15,11 @@ const Awards = (props) => {
           height='83'
           width='400'
         />
-      ) : ruta == '/artur' || ruta == '/ca/artur' || ruta == '/en/artur' ? (
-        <img
-          className={'artur'}
-          loading='lazy'
-          src={`${wpAssetsUrl}/awards/awards-artur-aurt.svg`}
-          alt='artur aürt awards'
-          height='70'
-          width='345'
-        />
       ) : (
         <img
           className={'others'}
           loading='lazy'
-          src={`${wpAssetsUrl}/awards/awards-aurt-2023.svg`}
+          src={`${wpAssetsUrl}/awards/awards-aurt.svg`}
           alt='aürt awards'
           height='500'
           width='263'
