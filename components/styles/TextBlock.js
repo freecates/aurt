@@ -8,6 +8,9 @@ const TextBlock = styled.div`
   @media (max-width: 767px) {
     max-width: 85%;
   }
+  div p {
+    padding: 0;
+  }
   .center {
     text-align: center !important;
   }
