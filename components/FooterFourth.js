@@ -40,6 +40,7 @@ const FooterFourth = (props) => (
             PER MANTENIR-TE
             <br />
             INFORMAT
+            <br /><br />
           </React.Fragment>
         )}
 
@@ -66,6 +67,7 @@ const FooterFourth = (props) => (
             TO KEEP YOU
             <br />
             INFORMED
+            <br /><br />
           </React.Fragment>
         )}
 
@@ -92,6 +94,7 @@ const FooterFourth = (props) => (
             PARA MANTENERTE
             <br />
             INFORMADO
+            <br /><br />
           </React.Fragment>
         )}
       </section>

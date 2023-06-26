@@ -16,7 +16,7 @@ const StyleHeader = styled.footer`
     }
     .fourth {
       grid-column: 3;
-      justify-self: end;
+      justify-self: center;
     }
     .second {
       grid-column: 4;

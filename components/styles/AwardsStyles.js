@@ -7,15 +7,15 @@ const AwardsStyles = styled.span`
   align-self: stretch;
   margin-top: -2rem;
   img {
-    height: 30px;
-    width: auto;
+    height: auto;
+    width: 100%;
     &.home {
       margin-top: 4rem;
       margin-right: 1.5rem;
     }
     &.artur,
     &.others {
-      margin-right: 2rem;
+      margin-right: 10rem;
     }
   }
   
@@ -29,8 +29,30 @@ const AwardsStyles = styled.span`
       }
       &.artur,
       &.others {
-        height: 70px;
         margin-right: 0;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    img {
+      &.others {
+        margin-right: 7rem;
+        max-width: 150px;
+      }
+    }
+  }
+  @media (min-width: 1120px) {
+    img {
+      &.others {
+        margin-right: 0;
+        max-width: 150px;
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    img {
+      &.others {
+        max-width: 200px;
       }
     }
   }
