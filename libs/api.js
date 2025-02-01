@@ -1,3 +1,5 @@
+import { fi } from 'date-fns/locale';
+
 const staticDataUrl = process.env.NEXT_PUBLIC_STATIC_DATA_URL;
 const wpDataUrl = process.env.WORDPRESS_API_URL;
 
@@ -67,11 +69,12 @@ const api = {
     },
     posts: {
         async getData() {
-            const response = await fetch(`${wpDataUrl}wp/v2/posts?limit=100&_embed`, {
+            const response = await fetch(`${wpDataUrl}wp/v2/posts?limit=1&order=asc&_embed`, {
                 headers: { 'Cache-Control': 'no-store, max-age=0' },
             });
             const data = await response.json();
-            return data;
+            const fistItem = data[0];
+            return [fistItem];
         },
     },
     singlePost: {

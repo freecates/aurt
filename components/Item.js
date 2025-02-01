@@ -8,7 +8,7 @@ import { IntlProvider, FormattedDate } from 'react-intl';
 const Item = ({ item, ruta }) => {
   const textBlock = item.content.rendered.substring(0, 280) + '...';
   const itemDate = item.date;
-  const featuredImage = item._embedded['wp:featuredmedia'][0];
+  const featuredImage = item._embedded['wp:featuredmedia']?.[0];
   return (
     <ItemStyles>
       <TextBlock>
