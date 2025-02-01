@@ -119,13 +119,13 @@ export default function Page(props) {
 
   async function createLangMenu(currentLang, fileName) {
     const resEN = await fetch(
-      `https://aurt-data.vercel.app/static/locales/en/navitems.json`
+      `https://aurt-data-4i1quklt5-oxygen-cat.vercel.app/static/locales/en/navitems.json`
     )
     const resCA = await fetch(
-      `https://aurt-data.vercel.app/static/locales/ca/navitems.json`
+      `https://aurt-data-4i1quklt5-oxygen-cat.vercel.app/static/locales/ca/navitems.json`
     )
     const resES = await fetch(
-      `https://aurt-data.vercel.app/static/locales/es/navitems.json`
+      `https://aurt-data-4i1quklt5-oxygen-cat.vercel.app/static/locales/es/navitems.json`
     )
 
     const contentCA = await resCA.json()
@@ -211,7 +211,7 @@ export default function Page(props) {
 
       if (lang !== newLang || content.length == 0) {
         const res = await fetch(
-          `https://aurt-data.vercel.app/static/locales/${newLang}/navitems.json`
+          `https://aurt-data-4i1quklt5-oxygen-cat.vercel.app/static/locales/${newLang}/navitems.json`
         )
         const content = await res.json()
         const langMenu = await createLangMenu(newLang, fileName)

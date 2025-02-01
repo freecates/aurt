@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import CapsulesVideoHome from '../components/CapsulesVideoHome';
 import Loader from '../components/Loader';
+import BannerHome from '@components/BannerHome';
 
 function Home(props) {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +57,7 @@ function Home(props) {
         <meta property='og:image:width' content='1024' />
         <meta property='og:image:height' content='1024' />
       </Head>
+      <BannerHome />
       <CapsulesVideoHome />
     </div>
   );
