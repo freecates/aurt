@@ -71,6 +71,12 @@ const NavStyles = styled.section`
         width: calc(100% - 60px);
       }
     }
+    &.no-link {
+      color: #dad9d9;
+      &:after {
+        display: none;
+      }
+    }
   }
   @media (max-width: 1300px) {
     width: 100%;

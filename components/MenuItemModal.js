@@ -137,16 +137,21 @@ const MenuItemModal = (props) => {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <h4>
-                      <Link href={menuModalItem.path}>
-                        <a
-                          className={`item`}
-                          title={menuModalItem.name}
-                          id={menuModalItem.id}>
-                          {menuModalItem.name}
-                        </a>
-                      </Link>
-                    </h4>
+                  <h4>
+                    {menuModalItem.path ? <Link href={menuModalItem.path}>
+                      <a
+                        className={`item`}
+                        title={menuModalItem.name}
+                        id={menuModalItem.id}>
+                        {menuModalItem.name}
+                      </a>
+                    </Link> : <a
+                        className={`item no-link`}
+                        title={menuModalItem.name}
+                        id={menuModalItem.id}>
+                        {menuModalItem.name}
+                      </a>}
+                  </h4>
                   </React.Fragment>
                 )}
               </RodalStyles>
@@ -202,14 +207,19 @@ const MenuItemModal = (props) => {
                 ) : (
                   <React.Fragment>
                     <h4>
-                      <Link href={menuModalItem.path}>
+                      {menuModalItem.path ? <Link href={menuModalItem.path}>
                         <a
                           className={`item`}
                           title={menuModalItem.name}
                           id={menuModalItem.id}>
                           {menuModalItem.name}
                         </a>
-                      </Link>
+                      </Link> : <a
+                          className={`item no-link`}
+                          title={menuModalItem.name}
+                          id={menuModalItem.id}>
+                          {menuModalItem.name}
+                        </a>}
                     </h4>
                   </React.Fragment>
                 )}

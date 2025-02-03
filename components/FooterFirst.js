@@ -18,14 +18,11 @@ const FooterFirst = (props) => (
           <br />
           Passeig del Taulat 262-264 / 08019 BARCELONA (SPAIN)
           <br />
-          +34 935 070 860 /{' '}
+          +34 935 070 862 /{' '}
           <a href='mailto:info@aurtrestaurant.com'>info@aurtrestaurant.com</a>
           <br />
           <strong>Reservations only via web</strong> (from 2 months up to 48
-          hours before), except
-          <br />
-          <strong>last minute reservations</strong> (last 48 hours){' '}
-          <strong>only by phone</strong>
+          hours before)
         </p>
       </div>
     )}
@@ -44,14 +41,11 @@ const FooterFirst = (props) => (
           <br />
           Passeig del Taulat 262-264 / 08019 BARCELONA (SPAIN)
           <br />
-          +34 935 070 860 /{' '}
+          +34 935 070 862 /{' '}
           <a href='mailto:info@aurtrestaurant.com'>info@aurtrestaurant.com</a>
           <br />
           <strong>Reserves només via web</strong> (des de 2 mesos fins 48 hores
-          abans), excepte
-          <br />
-          <strong>reserves last minute</strong> (darreres 48 hores){' '}
-          <strong>únicament por telèfon</strong>
+          abans)
         </p>
       </div>
     )}
@@ -70,14 +64,11 @@ const FooterFirst = (props) => (
           <br />
           Passeig del Taulat 262-264 / 08019 BARCELONA (SPAIN)
           <br />
-          +34 935 070 860 /{' '}
+          +34 935 070 862 /{' '}
           <a href='mailto:info@aurtrestaurant.com'>info@aurtrestaurant.com</a>
           <br />
           <strong>Reservas solo vía web</strong> (desde 2 meses hasta 48 horas
-          antes), excepto
-          <br />
-          <strong>reservas last minute</strong> (últimas 48 horas){' '}
-          <strong>únicamente por teléfono</strong>
+          antes)
         </p>
       </div>
     )}
