@@ -6,6 +6,7 @@ import Loader from '../components/Loader';
 import BannerHome from '@components/BannerHome';
 
 function Home(props) {
+  const { pathname } = props;
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ function Home(props) {
         <meta property='og:image:width' content='1024' />
         <meta property='og:image:height' content='1024' />
       </Head>
-      <BannerHome />
+      <BannerHome pathname={pathname} />
       <CapsulesVideoHome />
     </div>
   );

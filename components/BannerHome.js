@@ -1,6 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const setHref = (pathname) => {
+  if (pathname === '/') {
+    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/spanish?start=2025-02-24&end=2025-02-25';
+  } else if (pathname === '/en') {
+    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/english?start=2025-02-24&end=2025-02-25';
+  } else if (pathname === '/ca') {
+    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/catalan?start=2025-02-24&end=2025-02-25';
+  }
+};
+
+const setSrc = (pathname) => {
+  if (pathname === '/') {
+    return '/static/banner-huniik-es.gif';
+  } else if (pathname === '/en') {
+    return '/static/banner-huniik-en.gif';
+  } else if (pathname === '/ca') {
+    return '/static/banner-huniik-ca.gif';
+  }
+};
+
 const StyleBanner = styled.div`
   display: ${(props) => (props.visible ? 'block' : 'none')};
   visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
@@ -46,15 +66,15 @@ const StyleBanner = styled.div`
   }
 `;
 
-const BannerHome = () => {
+const BannerHome = ({ pathname }) => {
   const [isVisble, setIsVisible] = React.useState(true);
   return (
     <StyleBanner visible={isVisble}>
       <span onClick={() => setIsVisible(false)} />
-      <a href='https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/spanish?start=2025-02-24&end=2025-02-25'>
+      <a href={setHref(pathname)}>
         <img
           loading='lazy'
-          src='/static/banner-huniik-es.gif'
+          src={setSrc(pathname)}
           alt='Og Image AURT Web'
           width='550'
           height='537'
