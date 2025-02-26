@@ -66,9 +66,9 @@ const StyleBanner = styled.div`
   }
 `;
 
-const BannerHome = ({ pathname }) => {
+const BannerHome = ({ pathname, active }) => {
   const [isVisble, setIsVisible] = React.useState(true);
-  return (
+  return active ? (
     <StyleBanner visible={isVisble}>
       <span onClick={() => setIsVisible(false)} />
       <a href={setHref(pathname)}>
@@ -81,7 +81,7 @@ const BannerHome = ({ pathname }) => {
         />
       </a>
     </StyleBanner>
-  );
+  ) : null;
 };
 
 export default BannerHome;
