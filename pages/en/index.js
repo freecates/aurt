@@ -56,7 +56,7 @@ function Home(props) {
         <meta property='og:image:width' content='1024' />
         <meta property='og:image:height' content='1024' />
       </Head>
-      <BannerHome pathname={pathname} active={false} />
+      <BannerHome pathname={pathname} active={true} />
       <CapsulesVideoHome />
     </div>
   );

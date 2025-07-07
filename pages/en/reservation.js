@@ -1,8 +1,10 @@
+import BannerHome from '@components/BannerHome';
 import Reservations from '../../components/Reservations'
 
 const Reserva = props => (
   <div>
     <Reservations ruta={props.pathname} url={props.url} />
+    <BannerHome pathname={props.pathname} active />
   </div>
 )
 
