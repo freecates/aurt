@@ -3,21 +3,21 @@ import styled from 'styled-components';
 
 const setHref = (pathname) => {
   if (pathname === '/') {
-    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/spanish?start=2025-02-24&end=2025-02-25';
+    return null;
   } else if (pathname === '/en') {
-    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/english?start=2025-02-24&end=2025-02-25';
+    return null;
   } else if (pathname === '/ca') {
-    return 'https://www.covermanager.com/reserve/module_restaurant/restaurante-aurtx/catalan?start=2025-02-24&end=2025-02-25';
+    return null;
   }
 };
 
 const setSrc = (pathname) => {
-  if (pathname === '/') {
-    return '/static/banner-huniik-es.gif';
-  } else if (pathname === '/en') {
-    return '/static/banner-huniik-en.gif';
-  } else if (pathname === '/ca') {
-    return '/static/banner-huniik-ca.gif';
+  if (pathname === '/' || pathname === '/reserva') {
+    return '/static/banner-back-2026-es.png';
+  } else if (pathname === '/en' || pathname === '/en/reservation') {
+    return '/static/banner-back-2026-en.png';
+  } else if (pathname === '/ca' || pathname === '/ca/reserva') {
+    return '/static/banner-back-2026-ca.png';
   }
 };
 

@@ -1,3 +1,4 @@
+import BannerHome from '@components/BannerHome';
 import Reservations from '../components/Reservations'
 import Head from 'next/head'
 
@@ -19,6 +20,7 @@ const Reserva = props => (
       />
     </Head>
     <Reservations ruta={props.pathname} name={'Saber más'} url={props.url} />
+    <BannerHome pathname={props.pathname} active />
   </div>
 )
 
