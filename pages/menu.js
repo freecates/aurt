@@ -6,9 +6,7 @@ import Title from '../components/styles/Title'
 import SubTitle from '../components/styles/SubTitle'
 import TextBlock from '../components/styles/TextBlock'
 import TextSeparator from '../components/styles/TextSeparator'
-import MenuConditions from '../components/MenuConditions'
 import Head from 'next/head'
-import Link from 'next/link'
 
 const SingleModalItemName = styled.div`
   text-align: center;
@@ -78,27 +76,6 @@ const Page = props => (
           __html: props.post.firstTextBlock
         }}
       />
-      <TextSeparator>
-        <div className="here" />
-      </TextSeparator>
-      <SubTitle>
-        {' '}
-        VER
-        <Link href="/menu-degustacion" >
-          <a>MENU DEGUSTACIÓN</a>
-        </Link>
-      </SubTitle>
-      <TextSeparator>
-        <div className="here" />
-      </TextSeparator>
-      <TextBlock>
-        <SingleModalItemName>
-          <MenuConditions
-            ruta={props.pathname}
-            name={'Condiciones de Reserva y Cancelación'}
-          />
-        </SingleModalItemName>
-      </TextBlock>
     </React.Fragment>
   </InnerLayout>
 )

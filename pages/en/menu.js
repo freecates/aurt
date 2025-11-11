@@ -1,14 +1,12 @@
+import fetch from 'isomorphic-unfetch';
+import Head from 'next/head';
 import React from 'react';
-import styled from 'styled-components'
-import fetch from 'isomorphic-unfetch'
-import InnerLayout from '../../components/InnerLayout'
-import Title from '../../components/styles/Title'
-import SubTitle from '../../components/styles/SubTitle'
-import TextBlock from '../../components/styles/TextBlock'
-import TextSeparator from '../../components/styles/TextSeparator'
-import MenuConditions from '../../components/MenuConditions'
-import Head from 'next/head'
-import Link from 'next/link'
+import styled from 'styled-components';
+import InnerLayout from '../../components/InnerLayout';
+import SubTitle from '../../components/styles/SubTitle';
+import TextBlock from '../../components/styles/TextBlock';
+import TextSeparator from '../../components/styles/TextSeparator';
+import Title from '../../components/styles/Title';
 
 const SingleModalItemName = styled.div`
   text-align: center;
@@ -78,27 +76,6 @@ const Page = props => (
           __html: props.post.firstTextBlock
         }}
       />
-      <TextSeparator>
-        <div className="here" />
-      </TextSeparator>
-      <SubTitle>
-        {' '}
-        SEE
-        <Link href="/en/tasting-menu" >
-          <a>TASTING MENU</a>
-        </Link>
-      </SubTitle>
-      <TextSeparator>
-        <div className="here" />
-      </TextSeparator>
-      <TextBlock>
-        <SingleModalItemName>
-          <MenuConditions
-            ruta={props.pathname}
-            name={'Conditions of Reservation and Cancellation'}
-          />
-        </SingleModalItemName>
-      </TextBlock>
     </React.Fragment>
   </InnerLayout>
 )
