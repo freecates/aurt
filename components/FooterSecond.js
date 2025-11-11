@@ -291,8 +291,6 @@ const FooterSecond = (props) => (
         )}
       </section>
       <p>
-        &copy; 2021 HILTON
-        <br />
         <strong>
           <a target='_blank' href={'https://arturmartinez.com/'}>
             ArturMartinez.com

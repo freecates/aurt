@@ -1,13 +1,11 @@
+import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 import InnerLayout from '../../components/InnerLayout';
-import Title from '../../components/styles/Title';
 import SubTitle from '../../components/styles/SubTitle';
 import TextBlock from '../../components/styles/TextBlock';
 import TextSeparator from '../../components/styles/TextSeparator';
-import MenuConditions from '../../components/MenuConditions';
-import Head from 'next/head';
-import Link from 'next/link';
+import Title from '../../components/styles/Title';
 
 const SingleModalItemName = styled.div`
   text-align: center;
@@ -77,27 +75,6 @@ const Page = (props) => (
           __html: props.post.firstTextBlock,
         }}
       />
-      <TextSeparator>
-        <div className='here' />
-      </TextSeparator>
-      <SubTitle>
-        {' '}
-        VEURE
-        <Link href='/ca/menu-degustacio'>
-          <a>MENU DEGUSTACIÓ</a>
-        </Link>
-      </SubTitle>
-      <TextSeparator>
-        <div className='here' />
-      </TextSeparator>
-      <TextBlock>
-        <SingleModalItemName>
-          <MenuConditions
-            ruta={props.pathname}
-            name={'Condicions de Reserva i Cancelació'}
-          />
-        </SingleModalItemName>
-      </TextBlock>
     </React.Fragment>
   </InnerLayout>
 );
