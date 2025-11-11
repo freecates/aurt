@@ -97,7 +97,7 @@ const FooterSecond = (props) => (
                     {
                       id: '0201',
                       name:
-                        'Declaració de privacitat mundial de Hilton Worldwide Holdings Inc.',
+                        'Política de privacitat del lloc web',
                       file: 'ca/politica-de-privacitat.md',
                       class: 'left',
                     },
@@ -115,7 +115,7 @@ const FooterSecond = (props) => (
                     {
                       id: '0301',
                       name:
-                        'Declaració sobre les galetes i altres tecnologies de Hilton Worldwide Holdings Inc',
+                        'Política de cookies',
                       file: 'ca/politica-de-cookies.md',
                       class: 'left',
                     },
@@ -188,7 +188,7 @@ const FooterSecond = (props) => (
                     {
                       id: '0301',
                       name:
-                        'Hilton Worldwide Holdings Inc. Statement Regarding Cookies and Other Technologies',
+                        'Cookies Policy',
                       file: 'en/cookies.md',
                       class: 'left',
                     },
@@ -244,7 +244,7 @@ const FooterSecond = (props) => (
                     {
                       id: '0201',
                       name:
-                        'Declaración de privacidad mundial de Hilton Worldwide Holdings Inc.',
+                        'Política de privacidad del sitio web',
                       file: 'politica-de-privacidad.md',
                       class: 'left',
                     },
@@ -262,7 +262,7 @@ const FooterSecond = (props) => (
                     {
                       id: '0301',
                       name:
-                        'Declaración acerca de las cookies y otras tecnologías de Hilton Worldwide Holdings Inc.',
+                        'Política de cookies',
                       file: 'politica-de-cookies.md',
                       class: 'left',
                     },
