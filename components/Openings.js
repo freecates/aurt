@@ -73,7 +73,7 @@ const Openings = ({ data, titol, ruta }) => {
         ))}
         {lasthorariosBlocks.map((d, id) => (
           <div key={id}>
-            <SubTitle>{d.title}</SubTitle>
+            <SubTitle>{d.tipus_dhorari}</SubTitle>
             <TextBlock>
               <div
                 className={'center'}
